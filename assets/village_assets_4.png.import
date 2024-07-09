@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://eplnyn2oqaqd"
+path.s3tc="res://.godot/imported/village_assets_4.png-ed756a6f8c465f8167e41ec71e8a1841.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "c9659e2e98cf1d3e894bfbe4a7afb1dc"
+}
+
+[deps]
+
+source_file="res://assets/village_assets_4.png"
+dest_files=["res://.godot/imported/village_assets_4.png-ed756a6f8c465f8167e41ec71e8a1841.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/village_assets_4.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce7l8274ykrh3"]
+
+[ext_resource type="PackedScene" uid="uid://dq2e5nsw51n43" path="res://assets/grass.glb" id="1_n80ax"]
+
+[node name="grass" instance=ExtResource("1_n80ax")]
+
+[node name="Plane_Grass_0" parent="Sketchfab_model/6dfba80a7e5340b3a82bd98785139887_fbx/RootNode/Plane" index="0"]
+transform = Transform3D(1, -6.86649e-24, 3.54383e-17, -1.5382e-25, 1, 0, 5.75486e-17, 0, 1, 0, 0, 0)

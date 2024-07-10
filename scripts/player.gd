@@ -6,7 +6,7 @@ extends CharacterBody3D
 
 
 
-const SPEED = 3.0
+const SPEED = 2.0
 const JUMP_VELOCITY = 3
 
 @export var sens_horizontal = 0.5

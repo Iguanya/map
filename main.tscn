@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://vhxbumnswpns"]
+[gd_scene load_steps=206 format=3 uid="uid://vhxbumnswpns"]
 
 [ext_resource type="PackedScene" uid="uid://b1ubihsbgfdq5" path="res://scripts/player.tscn" id="1_binyw"]
 [ext_resource type="Texture2D" uid="uid://wshmygrvgmnk" path="res://assets/village_assets_0.png" id="1_vm748"]
@@ -16,9 +16,36 @@
 [ext_resource type="Texture2D" uid="uid://dhhje56afgu06" path="res://assets/village_assets_12.png" id="13_rxmi8"]
 [ext_resource type="Texture2D" uid="uid://c3tsgpq3k48ho" path="res://textures/grids/Dark/texture_02.png" id="15_3fida"]
 [ext_resource type="Texture2D" uid="uid://rpv7wej2d6w0" path="res://avatar.png" id="16_porr5"]
+[ext_resource type="Texture2D" uid="uid://dd0g5iamumsbu" path="res://assets/game_landscape_tiles_0.png" id="16_tt7xf"]
 [ext_resource type="Script" path="res://Control.gd" id="16_xsk7h"]
 [ext_resource type="Texture2D" uid="uid://ue4co0ls7dup" path="res://two-coins.svg" id="17_8cdli"]
 [ext_resource type="FontFile" uid="uid://b0m40l4jj8mxs" path="res://RobotoCondensed-Italic-VariableFont_wght.ttf" id="17_hhqgb"]
+[ext_resource type="Texture2D" uid="uid://c2nwgd7yo8ear" path="res://assets/game_landscape_tiles_1.png" id="17_naq37"]
+[ext_resource type="Texture2D" uid="uid://btudsi7bilcw6" path="res://assets/game_landscape_tiles_2.png" id="18_otkay"]
+[ext_resource type="Texture2D" uid="uid://00415b4l6ld" path="res://assets/game_landscape_tiles_3.png" id="19_djd54"]
+[ext_resource type="Texture2D" uid="uid://cbev7jpwlymcf" path="res://assets/game_landscape_tiles_4.png" id="20_654vu"]
+[ext_resource type="Texture2D" uid="uid://do4tcb82kr2xh" path="res://assets/game_landscape_tiles_5.png" id="21_kvojb"]
+[ext_resource type="Texture2D" uid="uid://b6iax4qu6xk8h" path="res://assets/game_landscape_tiles_6.png" id="22_mt8nt"]
+[ext_resource type="Texture2D" uid="uid://npej2gn0ghum" path="res://assets/game_landscape_tiles_7.png" id="23_haa20"]
+[ext_resource type="Texture2D" uid="uid://bgcfls5bkfqxc" path="res://assets/game_landscape_tiles_8.png" id="24_jbygh"]
+[ext_resource type="Texture2D" uid="uid://ij07tbi7ww0p" path="res://assets/game_landscape_tiles_9.png" id="25_2gm86"]
+[ext_resource type="Texture2D" uid="uid://ctmcqdjydxd3r" path="res://assets/game_landscape_tiles_10.png" id="26_arfoi"]
+[ext_resource type="Texture2D" uid="uid://bns1hskaygcn8" path="res://assets/game_landscape_tiles_11.png" id="27_2fwwq"]
+[ext_resource type="Texture2D" uid="uid://c6yok2v0kkxve" path="res://assets/game_landscape_tiles_12.png" id="28_jgsoa"]
+[ext_resource type="Texture2D" uid="uid://c3uacxjpdx4nk" path="res://assets/game_landscape_tiles_13.png" id="29_difdy"]
+[ext_resource type="Texture2D" uid="uid://dhuxntal8jgtf" path="res://assets/game_landscape_tiles_14.png" id="30_gy3mm"]
+[ext_resource type="Texture2D" uid="uid://bmnxaprr2ck8g" path="res://assets/game_landscape_tiles_15.png" id="31_spgas"]
+[ext_resource type="Texture2D" uid="uid://dopnn08q0syyr" path="res://assets/game_landscape_tiles_16.png" id="32_evrmj"]
+[ext_resource type="Texture2D" uid="uid://byux3ucejnc08" path="res://assets/game_landscape_tiles_17.png" id="33_qcyxp"]
+[ext_resource type="Texture2D" uid="uid://coxhb2s1koetd" path="res://assets/game_landscape_tiles_18.png" id="34_2g4mh"]
+[ext_resource type="Texture2D" uid="uid://blfi6obfgban2" path="res://assets/game_landscape_tiles_19.png" id="35_jer55"]
+[ext_resource type="Texture2D" uid="uid://ck3aayt18wphv" path="res://assets/game_landscape_tiles_20.png" id="36_lif5s"]
+[ext_resource type="Texture2D" uid="uid://dcc86yb6ii53c" path="res://assets/game_landscape_tiles_21.png" id="37_3cddi"]
+[ext_resource type="Texture2D" uid="uid://dc1pnmpirgvl6" path="res://assets/game_landscape_tiles_22.png" id="38_cono1"]
+[ext_resource type="Texture2D" uid="uid://bsvpvl7oygooq" path="res://assets/game_landscape_tiles_23.png" id="39_2ktec"]
+[ext_resource type="Texture2D" uid="uid://du1v2lrbqb80p" path="res://assets/game_landscape_tiles_24.png" id="40_o135h"]
+[ext_resource type="Texture2D" uid="uid://e1crfsn00s64" path="res://assets/game_landscape_tiles_25.png" id="41_tk2b8"]
+[ext_resource type="PackedScene" uid="uid://c054jha3apd6e" path="res://assets/grass_filed.glb" id="46_d7pwd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbnp8"]
 sky_horizon_color = Color(0.65789, 0.650751, 0.655116, 1)
@@ -1200,6 +1227,818 @@ shadow_mesh = SubResource("ArrayMesh_w8utv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flfus"]
 albedo_texture = ExtResource("15_3fida")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kg7q5"]
+resource_name = "Path_Corner-TopRight"
+cull_mode = 2
+albedo_texture = ExtResource("16_tt7xf")
+metallic_texture = ExtResource("17_naq37")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("17_naq37")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xb0al"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_Corner-TopRight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ic57p"]
+resource_name = "Sketchfab_Scene_Object_0"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_kg7q5"),
+"name": "Path_Corner-TopRight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xb0al")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tc24b"]
+resource_name = "Mulch"
+cull_mode = 2
+albedo_texture = ExtResource("18_otkay")
+metallic_texture = ExtResource("19_djd54")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("19_djd54")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wkd6l"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Mulch",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nf15p"]
+resource_name = "Sketchfab_Scene_Object_1"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_tc24b"),
+"name": "Mulch",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_wkd6l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrdjt"]
+resource_name = "Path_end"
+cull_mode = 2
+albedo_texture = ExtResource("20_654vu")
+metallic_texture = ExtResource("21_kvojb")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("21_kvojb")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8ujq2"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_end",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jfiat"]
+resource_name = "Sketchfab_Scene_Object_2"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_hrdjt"),
+"name": "Path_end",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8ujq2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15m2h"]
+resource_name = "Path_Corner-LowerLeft"
+cull_mode = 2
+albedo_texture = ExtResource("22_mt8nt")
+metallic_texture = ExtResource("23_haa20")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("23_haa20")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eovu3"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_Corner-LowerLeft",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8h05f"]
+resource_name = "Sketchfab_Scene_Object_3"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_15m2h"),
+"name": "Path_Corner-LowerLeft",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_eovu3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ml4i1"]
+resource_name = "Path_blendDown"
+cull_mode = 2
+albedo_texture = ExtResource("24_jbygh")
+metallic_texture = ExtResource("25_2gm86")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("25_2gm86")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xavbx"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_blendDown",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pi2u0"]
+resource_name = "Sketchfab_Scene_Object_4"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_ml4i1"),
+"name": "Path_blendDown",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xavbx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ryqjc"]
+resource_name = "Path_horizontal"
+cull_mode = 2
+albedo_texture = ExtResource("26_arfoi")
+metallic_texture = ExtResource("27_2fwwq")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("27_2fwwq")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x3ylo"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_horizontal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k2tdk"]
+resource_name = "Sketchfab_Scene_Object_5"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_ryqjc"),
+"name": "Path_horizontal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_x3ylo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q07rg"]
+resource_name = "Path_Corner-LowerRight"
+cull_mode = 2
+albedo_texture = ExtResource("28_jgsoa")
+metallic_texture = ExtResource("29_difdy")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("29_difdy")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lawjh"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_Corner-LowerRight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_04as4"]
+resource_name = "Sketchfab_Scene_Object_6"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_q07rg"),
+"name": "Path_Corner-LowerRight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lawjh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3clpj"]
+resource_name = "Path_blendLeft"
+cull_mode = 2
+albedo_texture = ExtResource("30_gy3mm")
+metallic_texture = ExtResource("31_spgas")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("31_spgas")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ui4o8"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_blendLeft",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hwh5b"]
+resource_name = "Sketchfab_Scene_Object_7"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_3clpj"),
+"name": "Path_blendLeft",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ui4o8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfrkg"]
+resource_name = "Path_vertical"
+cull_mode = 2
+albedo_texture = ExtResource("32_evrmj")
+metallic_texture = ExtResource("33_qcyxp")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("33_qcyxp")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7civt"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_vertical",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ycaam"]
+resource_name = "Sketchfab_Scene_Object_8"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_jfrkg"),
+"name": "Path_vertical",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7civt")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r7hoo"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_713y1"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1dynx"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tta4q"]
+resource_name = "Path_Corner-TopLeft"
+cull_mode = 2
+albedo_texture = ExtResource("34_2g4mh")
+metallic_texture = ExtResource("35_jer55")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("35_jer55")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4o0h5"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_Corner-TopLeft",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_23kk3"]
+resource_name = "Sketchfab_Scene_Object_9"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_tta4q"),
+"name": "Path_Corner-TopLeft",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4o0h5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wi72u"]
+resource_name = "Path_blendRight"
+cull_mode = 2
+albedo_texture = ExtResource("36_lif5s")
+metallic_texture = ExtResource("37_3cddi")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("37_3cddi")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lvutv"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Path_blendRight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_moy6c"]
+resource_name = "Sketchfab_Scene_Object_10"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_wi72u"),
+"name": "Path_blendRight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lvutv")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m4qiy"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifd8q"]
+resource_name = "Grass"
+cull_mode = 2
+albedo_texture = ExtResource("38_cono1")
+metallic_texture = ExtResource("39_2ktec")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("39_2ktec")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_piw3m"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uqupe"]
+resource_name = "Sketchfab_Scene_Object_11"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_ifd8q"),
+"name": "Grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 63, 255, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_piw3m")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ojvr3"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oatfy"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6bi3h"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oyrnw"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i3cwq"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2.00001, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 192,
+"index_data": PackedByteArray(56, 0, 2, 0, 16, 0, 56, 0, 17, 0, 2, 0, 3, 0, 23, 0, 28, 0, 3, 0, 1, 0, 23, 0, 28, 0, 22, 0, 29, 0, 28, 0, 23, 0, 22, 0, 29, 0, 21, 0, 33, 0, 29, 0, 22, 0, 21, 0, 33, 0, 20, 0, 38, 0, 33, 0, 21, 0, 20, 0, 38, 0, 19, 0, 44, 0, 38, 0, 20, 0, 19, 0, 44, 0, 18, 0, 50, 0, 44, 0, 19, 0, 18, 0, 50, 0, 17, 0, 56, 0, 50, 0, 18, 0, 17, 0, 7, 0, 25, 0, 24, 0, 7, 0, 6, 0, 25, 0, 6, 0, 26, 0, 25, 0, 6, 0, 5, 0, 26, 0, 5, 0, 27, 0, 26, 0, 5, 0, 4, 0, 27, 0, 4, 0, 28, 0, 27, 0, 4, 0, 3, 0, 28, 0, 30, 0, 36, 0, 35, 0, 30, 0, 31, 0, 36, 0, 31, 0, 37, 0, 36, 0, 31, 0, 32, 0, 37, 0, 34, 0, 41, 0, 40, 0, 34, 0, 35, 0, 41, 0, 35, 0, 42, 0, 41, 0, 35, 0, 36, 0, 42, 0, 36, 0, 43, 0, 42, 0, 36, 0, 37, 0, 43, 0, 8, 0, 45, 0, 9, 0, 8, 0, 39, 0, 45, 0, 39, 0, 46, 0, 45, 0, 39, 0, 40, 0, 46, 0, 40, 0, 47, 0, 46, 0, 40, 0, 41, 0, 47, 0, 41, 0, 48, 0, 47, 0, 41, 0, 42, 0, 48, 0, 42, 0, 49, 0, 48, 0, 42, 0, 43, 0, 49, 0, 9, 0, 51, 0, 10, 0, 9, 0, 45, 0, 51, 0, 45, 0, 52, 0, 51, 0, 45, 0, 46, 0, 52, 0, 46, 0, 53, 0, 52, 0, 46, 0, 47, 0, 53, 0, 47, 0, 54, 0, 53, 0, 47, 0, 48, 0, 54, 0, 48, 0, 55, 0, 54, 0, 48, 0, 49, 0, 55, 0, 10, 0, 11, 0, 0, 0, 10, 0, 51, 0, 11, 0, 51, 0, 12, 0, 11, 0, 51, 0, 52, 0, 12, 0, 52, 0, 13, 0, 12, 0, 52, 0, 53, 0, 13, 0, 53, 0, 14, 0, 13, 0, 53, 0, 54, 0, 14, 0, 54, 0, 15, 0, 14, 0, 54, 0, 55, 0, 15, 0),
+"lods": [1e-10, PackedByteArray(56, 0, 2, 0, 16, 0, 56, 0, 17, 0, 2, 0, 50, 0, 17, 0, 56, 0, 50, 0, 18, 0, 17, 0, 44, 0, 18, 0, 50, 0, 44, 0, 19, 0, 18, 0, 38, 0, 19, 0, 44, 0, 38, 0, 20, 0, 19, 0, 33, 0, 20, 0, 38, 0, 33, 0, 21, 0, 20, 0, 29, 0, 21, 0, 33, 0, 29, 0, 22, 0, 21, 0, 28, 0, 22, 0, 29, 0, 28, 0, 23, 0, 22, 0, 3, 0, 23, 0, 28, 0, 3, 0, 1, 0, 23, 0, 4, 0, 3, 0, 28, 0, 4, 0, 28, 0, 27, 0, 5, 0, 4, 0, 27, 0, 5, 0, 27, 0, 26, 0, 6, 0, 5, 0, 26, 0, 6, 0, 26, 0, 25, 0, 7, 0, 6, 0, 25, 0, 7, 0, 25, 0, 24, 0, 30, 0, 31, 0, 35, 0, 31, 0, 37, 0, 35, 0, 31, 0, 32, 0, 37, 0, 35, 0, 37, 0, 43, 0, 35, 0, 43, 0, 40, 0, 34, 0, 35, 0, 40, 0, 40, 0, 43, 0, 39, 0, 43, 0, 49, 0, 39, 0, 39, 0, 49, 0, 55, 0, 8, 0, 39, 0, 9, 0, 9, 0, 39, 0, 10, 0, 39, 0, 55, 0, 10, 0, 55, 0, 15, 0, 14, 0, 10, 0, 55, 0, 14, 0, 10, 0, 14, 0, 13, 0, 10, 0, 13, 0, 12, 0, 10, 0, 12, 0, 11, 0, 10, 0, 11, 0, 0, 0)],
+"name": "Grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 57,
+"vertex_data": PackedByteArray(254, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 31, 0, 0, 0, 0, 0, 0, 255, 63, 0, 0, 0, 0, 0, 0, 255, 95, 0, 0, 0, 0, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 255, 159, 0, 0, 255, 159, 0, 0, 254, 255, 0, 0, 255, 191, 0, 0, 254, 255, 0, 0, 254, 223, 0, 0, 254, 255, 0, 0, 254, 255, 0, 0, 254, 223, 0, 0, 254, 255, 0, 0, 255, 191, 0, 0, 254, 255, 0, 0, 255, 159, 0, 0, 254, 255, 0, 0, 255, 127, 0, 0, 254, 255, 0, 0, 255, 95, 0, 0, 254, 255, 0, 0, 255, 31, 0, 0, 254, 223, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 255, 159, 0, 0, 0, 0, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 255, 95, 0, 0, 0, 0, 0, 0, 255, 63, 0, 0, 0, 0, 0, 0, 255, 31, 0, 0, 0, 0, 0, 0, 255, 31, 0, 0, 255, 159, 0, 0, 255, 31, 0, 0, 255, 127, 0, 0, 255, 31, 0, 0, 255, 95, 0, 0, 255, 31, 0, 0, 255, 63, 0, 0, 255, 31, 0, 0, 255, 31, 0, 0, 255, 63, 0, 0, 255, 31, 0, 0, 255, 95, 0, 0, 255, 159, 0, 0, 255, 95, 0, 0, 255, 127, 0, 0, 255, 95, 0, 0, 255, 95, 0, 0, 255, 95, 0, 0, 255, 31, 0, 0, 255, 127, 0, 0, 255, 191, 0, 0, 255, 127, 0, 0, 255, 159, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 95, 0, 0, 255, 127, 0, 0, 255, 31, 0, 0, 255, 159, 0, 0, 254, 223, 0, 0, 255, 159, 0, 0, 255, 191, 0, 0, 255, 159, 0, 0, 255, 159, 0, 0, 255, 159, 0, 0, 255, 127, 0, 0, 255, 159, 0, 0, 255, 95, 0, 0, 255, 159, 0, 0, 255, 31, 0, 0, 255, 191, 0, 0, 254, 223, 0, 0, 255, 191, 0, 0, 255, 191, 0, 0, 255, 191, 0, 0, 255, 159, 0, 0, 255, 191, 0, 0, 255, 127, 0, 0, 255, 191, 0, 0, 255, 95, 0, 0, 255, 191, 0, 0, 255, 31, 0, 0, 254, 223, 0, 0, 254, 223, 0, 0, 254, 223, 0, 0, 255, 191, 0, 0, 254, 223, 0, 0, 255, 159, 0, 0, 254, 223, 0, 0, 255, 127, 0, 0, 254, 223, 0, 0, 255, 95, 0, 0, 254, 223, 0, 0, 255, 31, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rle2f"]
+resource_name = "Sketchfab_Scene_Object_12"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2.00001, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(255, 255, 50, 51, 50, 51, 255, 255, 255, 255, 255, 255, 50, 51, 101, 230, 50, 51, 204, 204, 50, 51, 50, 179, 50, 51, 153, 153, 50, 51, 255, 127, 50, 179, 50, 51, 204, 204, 50, 51, 101, 230, 50, 51, 255, 255, 204, 76, 255, 255, 102, 102, 255, 255, 255, 127, 255, 255, 153, 153, 255, 255, 50, 179, 255, 255, 101, 230, 101, 230, 255, 255, 204, 204, 255, 255, 50, 179, 255, 255, 153, 153, 255, 255, 255, 127, 255, 255, 102, 102, 255, 255, 204, 76, 255, 255, 204, 76, 255, 127, 204, 76, 153, 153, 204, 76, 50, 179, 204, 76, 204, 204, 204, 76, 101, 230, 102, 102, 101, 230, 255, 127, 255, 127, 255, 127, 153, 153, 255, 127, 50, 179, 255, 127, 101, 230, 153, 153, 102, 102, 153, 153, 255, 127, 153, 153, 153, 153, 153, 153, 50, 179, 153, 153, 101, 230, 50, 179, 204, 76, 50, 179, 102, 102, 50, 179, 255, 127, 50, 179, 153, 153, 50, 179, 50, 179, 50, 179, 101, 230, 204, 204, 204, 76, 204, 204, 102, 102, 204, 204, 255, 127, 204, 204, 153, 153, 204, 204, 50, 179, 204, 204, 101, 230, 101, 230, 204, 76, 101, 230, 102, 102, 101, 230, 255, 127, 101, 230, 153, 153, 101, 230, 50, 179, 101, 230, 101, 230),
+"format": 34896613399,
+"index_count": 192,
+"index_data": PackedByteArray(56, 0, 2, 0, 16, 0, 56, 0, 17, 0, 2, 0, 3, 0, 23, 0, 28, 0, 3, 0, 1, 0, 23, 0, 28, 0, 22, 0, 29, 0, 28, 0, 23, 0, 22, 0, 29, 0, 21, 0, 33, 0, 29, 0, 22, 0, 21, 0, 33, 0, 20, 0, 38, 0, 33, 0, 21, 0, 20, 0, 38, 0, 19, 0, 44, 0, 38, 0, 20, 0, 19, 0, 44, 0, 18, 0, 50, 0, 44, 0, 19, 0, 18, 0, 50, 0, 17, 0, 56, 0, 50, 0, 18, 0, 17, 0, 7, 0, 25, 0, 24, 0, 7, 0, 6, 0, 25, 0, 6, 0, 26, 0, 25, 0, 6, 0, 5, 0, 26, 0, 5, 0, 27, 0, 26, 0, 5, 0, 4, 0, 27, 0, 4, 0, 28, 0, 27, 0, 4, 0, 3, 0, 28, 0, 30, 0, 36, 0, 35, 0, 30, 0, 31, 0, 36, 0, 31, 0, 37, 0, 36, 0, 31, 0, 32, 0, 37, 0, 34, 0, 41, 0, 40, 0, 34, 0, 35, 0, 41, 0, 35, 0, 42, 0, 41, 0, 35, 0, 36, 0, 42, 0, 36, 0, 43, 0, 42, 0, 36, 0, 37, 0, 43, 0, 8, 0, 45, 0, 9, 0, 8, 0, 39, 0, 45, 0, 39, 0, 46, 0, 45, 0, 39, 0, 40, 0, 46, 0, 40, 0, 47, 0, 46, 0, 40, 0, 41, 0, 47, 0, 41, 0, 48, 0, 47, 0, 41, 0, 42, 0, 48, 0, 42, 0, 49, 0, 48, 0, 42, 0, 43, 0, 49, 0, 9, 0, 51, 0, 10, 0, 9, 0, 45, 0, 51, 0, 45, 0, 52, 0, 51, 0, 45, 0, 46, 0, 52, 0, 46, 0, 53, 0, 52, 0, 46, 0, 47, 0, 53, 0, 47, 0, 54, 0, 53, 0, 47, 0, 48, 0, 54, 0, 48, 0, 55, 0, 54, 0, 48, 0, 49, 0, 55, 0, 10, 0, 11, 0, 0, 0, 10, 0, 51, 0, 11, 0, 51, 0, 12, 0, 11, 0, 51, 0, 52, 0, 12, 0, 52, 0, 13, 0, 12, 0, 52, 0, 53, 0, 13, 0, 53, 0, 14, 0, 13, 0, 53, 0, 54, 0, 14, 0, 54, 0, 15, 0, 14, 0, 54, 0, 55, 0, 15, 0),
+"lods": [1e-10, PackedByteArray(56, 0, 2, 0, 16, 0, 56, 0, 17, 0, 2, 0, 50, 0, 17, 0, 56, 0, 50, 0, 18, 0, 17, 0, 44, 0, 18, 0, 50, 0, 44, 0, 19, 0, 18, 0, 38, 0, 19, 0, 44, 0, 38, 0, 20, 0, 19, 0, 33, 0, 20, 0, 38, 0, 33, 0, 21, 0, 20, 0, 29, 0, 21, 0, 33, 0, 29, 0, 22, 0, 21, 0, 28, 0, 22, 0, 29, 0, 28, 0, 23, 0, 22, 0, 3, 0, 23, 0, 28, 0, 3, 0, 1, 0, 23, 0, 4, 0, 3, 0, 28, 0, 4, 0, 28, 0, 27, 0, 5, 0, 4, 0, 27, 0, 5, 0, 27, 0, 26, 0, 6, 0, 5, 0, 26, 0, 6, 0, 26, 0, 25, 0, 7, 0, 6, 0, 25, 0, 7, 0, 25, 0, 24, 0, 30, 0, 31, 0, 35, 0, 31, 0, 37, 0, 35, 0, 31, 0, 32, 0, 37, 0, 35, 0, 37, 0, 43, 0, 35, 0, 43, 0, 40, 0, 34, 0, 35, 0, 40, 0, 40, 0, 43, 0, 39, 0, 43, 0, 49, 0, 39, 0, 39, 0, 49, 0, 55, 0, 8, 0, 39, 0, 9, 0, 9, 0, 39, 0, 10, 0, 39, 0, 55, 0, 10, 0, 55, 0, 15, 0, 14, 0, 10, 0, 55, 0, 14, 0, 10, 0, 14, 0, 13, 0, 10, 0, 13, 0, 12, 0, 10, 0, 12, 0, 11, 0, 10, 0, 11, 0, 0, 0)],
+"material": SubResource("StandardMaterial3D_ifd8q"),
+"name": "Grass",
+"primitive": 3,
+"uv_scale": Vector4(5, 5, 0, 0),
+"vertex_count": 57,
+"vertex_data": PackedByteArray(254, 255, 0, 0, 254, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 254, 255, 0, 0, 0, 0, 255, 63, 0, 0, 0, 0, 255, 31, 255, 63, 0, 0, 0, 0, 255, 63, 255, 63, 0, 0, 0, 0, 255, 95, 255, 63, 0, 0, 0, 0, 255, 127, 255, 63, 0, 0, 0, 0, 255, 159, 255, 63, 255, 159, 0, 0, 254, 255, 255, 63, 255, 191, 0, 0, 254, 255, 255, 63, 254, 223, 0, 0, 254, 255, 255, 63, 254, 255, 0, 0, 254, 223, 255, 63, 254, 255, 0, 0, 255, 191, 255, 63, 254, 255, 0, 0, 255, 159, 255, 63, 254, 255, 0, 0, 255, 127, 255, 63, 254, 255, 0, 0, 255, 95, 255, 63, 254, 255, 0, 0, 255, 31, 255, 63, 254, 223, 0, 0, 0, 0, 255, 63, 255, 191, 0, 0, 0, 0, 255, 63, 255, 159, 0, 0, 0, 0, 255, 63, 255, 127, 0, 0, 0, 0, 255, 63, 255, 95, 0, 0, 0, 0, 255, 63, 255, 63, 0, 0, 0, 0, 255, 63, 255, 31, 0, 0, 0, 0, 255, 63, 255, 31, 0, 0, 255, 159, 255, 63, 255, 31, 0, 0, 255, 127, 255, 63, 255, 31, 0, 0, 255, 95, 255, 63, 255, 31, 0, 0, 255, 63, 255, 63, 255, 31, 0, 0, 255, 31, 255, 63, 255, 63, 0, 0, 255, 31, 255, 63, 255, 95, 0, 0, 255, 159, 255, 63, 255, 95, 0, 0, 255, 127, 255, 63, 255, 95, 0, 0, 255, 95, 255, 63, 255, 95, 0, 0, 255, 31, 255, 63, 255, 127, 0, 0, 255, 191, 255, 63, 255, 127, 0, 0, 255, 159, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 95, 255, 63, 255, 127, 0, 0, 255, 31, 255, 63, 255, 159, 0, 0, 254, 223, 255, 63, 255, 159, 0, 0, 255, 191, 255, 63, 255, 159, 0, 0, 255, 159, 255, 63, 255, 159, 0, 0, 255, 127, 255, 63, 255, 159, 0, 0, 255, 95, 255, 63, 255, 159, 0, 0, 255, 31, 255, 63, 255, 191, 0, 0, 254, 223, 255, 63, 255, 191, 0, 0, 255, 191, 255, 63, 255, 191, 0, 0, 255, 159, 255, 63, 255, 191, 0, 0, 255, 127, 255, 63, 255, 191, 0, 0, 255, 95, 255, 63, 255, 191, 0, 0, 255, 31, 255, 63, 254, 223, 0, 0, 254, 223, 255, 63, 254, 223, 0, 0, 255, 191, 255, 63, 254, 223, 0, 0, 255, 159, 255, 63, 254, 223, 0, 0, 255, 127, 255, 63, 254, 223, 0, 0, 255, 95, 255, 63, 254, 223, 0, 0, 255, 31, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_i3cwq")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4vwge"]
+data = PackedVector3Array(0.75, 0, -0.75, 1, 0, -1, 1, 0, -0.75, 0.75, 0, -0.75, 0.75, 0, -1, 1, 0, -1, -1, 0, -0.75, -0.75, 0, -1, -0.75, 0, -0.75, -1, 0, -0.75, -1, 0, -1, -0.75, 0, -1, -0.75, 0, -0.75, -0.5, 0, -1, -0.5, 0, -0.75, -0.75, 0, -0.75, -0.75, 0, -1, -0.5, 0, -1, -0.5, 0, -0.75, -0.25, 0, -1, -0.25, 0, -0.75, -0.5, 0, -0.75, -0.5, 0, -1, -0.25, 0, -1, -0.25, 0, -0.75, 0, 0, -1, 0, 0, -0.75, -0.25, 0, -0.75, -0.25, 0, -1, 0, 0, -1, 0, 0, -0.75, 0.25, 0, -1, 0.25, 0, -0.75, 0, 0, -0.75, 0, 0, -1, 0.25, 0, -1, 0.25, 0, -0.75, 0.5, 0, -1, 0.5, 0, -0.75, 0.25, 0, -0.75, 0.25, 0, -1, 0.5, 0, -1, 0.5, 0, -0.75, 0.75, 0, -1, 0.75, 0, -0.75, 0.5, 0, -0.75, 0.5, 0, -1, 0.75, 0, -1, -1, 0, 0.25, -0.75, 0, 0, -0.75, 0, 0.25, -1, 0, 0.25, -1, 0, 0, -0.75, 0, 0, -1, 0, 0, -0.75, 0, -0.25, -0.75, 0, 0, -1, 0, 0, -1, 0, -0.25, -0.75, 0, -0.25, -1, 0, -0.25, -0.75, 0, -0.5, -0.75, 0, -0.25, -1, 0, -0.25, -1, 0, -0.5, -0.75, 0, -0.5, -1, 0, -0.5, -0.75, 0, -0.75, -0.75, 0, -0.5, -1, 0, -0.5, -1, 0, -0.75, -0.75, 0, -0.75, -0.25, 0, 0.25, 0, 0, 0, 0, 0, 0.25, -0.25, 0, 0.25, -0.25, 0, 0, 0, 0, 0, -0.25, 0, 0, 0, 0, -0.25, 0, 0, 0, -0.25, 0, 0, -0.25, 0, -0.25, 0, 0, -0.25, 0, 0, 0.5, 0.25, 0, 0.25, 0.25, 0, 0.5, 0, 0, 0.5, 0, 0, 0.25, 0.25, 0, 0.25, 0, 0, 0.25, 0.25, 0, 0, 0.25, 0, 0.25, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0, 0, 0.25, 0, -0.25, 0.25, 0, 0, 0, 0, 0, 0, 0, -0.25, 0.25, 0, -0.25, 0.25, 0, 1, 0.5, 0, 0.75, 0.5, 0, 1, 0.25, 0, 1, 0.25, 0, 0.75, 0.5, 0, 0.75, 0.25, 0, 0.75, 0.5, 0, 0.5, 0.5, 0, 0.75, 0.25, 0, 0.75, 0.25, 0, 0.5, 0.5, 0, 0.5, 0.25, 0, 0.5, 0.5, 0, 0.25, 0.5, 0, 0.5, 0.25, 0, 0.5, 0.25, 0, 0.25, 0.5, 0, 0.25, 0.25, 0, 0.25, 0.5, 0, 0, 0.5, 0, 0.25, 0.25, 0, 0.25, 0.25, 0, 0, 0.5, 0, 0, 0.25, 0, 0, 0.5, 0, -0.25, 0.5, 0, 0, 0.25, 0, 0, 0.25, 0, -0.25, 0.5, 0, -0.25, 0.5, 0, 1, 0.75, 0, 0.75, 0.75, 0, 1, 0.5, 0, 1, 0.5, 0, 0.75, 0.75, 0, 0.75, 0.5, 0, 0.75, 0.75, 0, 0.5, 0.75, 0, 0.75, 0.5, 0, 0.75, 0.5, 0, 0.5, 0.75, 0, 0.5, 0.5, 0, 0.5, 0.75, 0, 0.25, 0.75, 0, 0.5, 0.5, 0, 0.5, 0.5, 0, 0.25, 0.75, 0, 0.25, 0.5, 0, 0.25, 0.75, 0, 0, 0.75, 0, 0.25, 0.5, 0, 0.25, 0.5, 0, 0, 0.75, 0, 0, 0.5, 0, 0, 0.75, 0, -0.25, 0.75, 0, 0, 0.5, 0, 0, 0.5, 0, -0.25, 0.75, 0, -0.25, 0.75, 0, 1, 1, 0, 0.75, 1, 0, 1, 0.75, 0, 1, 0.75, 0, 0.75, 1, 0, 0.75, 0.75, 0, 0.75, 1, 0, 0.5, 1, 0, 0.75, 0.75, 0, 0.75, 0.75, 0, 0.5, 1, 0, 0.5, 0.75, 0, 0.5, 1, 0, 0.25, 1, 0, 0.5, 0.75, 0, 0.5, 0.75, 0, 0.25, 1, 0, 0.25, 0.75, 0, 0.25, 1, 0, 0, 1, 0, 0.25, 0.75, 0, 0.25, 0.75, 0, 0, 1, 0, 0, 0.75, 0, 0, 1, 0, -0.25, 1, 0, 0, 0.75, 0, 0, 0.75, 0, -0.25, 1, 0, -0.25)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2o68g"]
+_surfaces = [{
+"aabb": AABB(-1, 0, 0.75, 1, 1e-05, 0.25001),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 6, 0, 2, 0, 0, 0, 1, 0, 6, 0, 2, 0, 7, 0, 3, 0, 2, 0, 6, 0, 7, 0, 3, 0, 8, 0, 4, 0, 3, 0, 7, 0, 8, 0, 4, 0, 9, 0, 5, 0, 4, 0, 8, 0, 9, 0),
+"name": "Mulch",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 252, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 63, 0, 0, 252, 255, 0, 0, 255, 127, 0, 0, 252, 255, 0, 0, 255, 191, 0, 0, 252, 255, 0, 0, 255, 255, 0, 0, 252, 255, 0, 0, 255, 63, 0, 0, 0, 0, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qfkyg"]
+resource_name = "Sketchfab_Scene_Object_13"
+_surfaces = [{
+"aabb": AABB(-1, 0, 0.75, 1, 1e-05, 0.25001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 170, 42, 170, 42, 0, 0, 84, 85, 0, 0, 255, 127, 0, 0, 170, 170, 0, 0, 170, 42, 170, 42, 84, 85, 170, 42, 255, 127, 170, 42, 170, 170, 170, 42),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 6, 0, 2, 0, 0, 0, 1, 0, 6, 0, 2, 0, 7, 0, 3, 0, 2, 0, 6, 0, 7, 0, 3, 0, 8, 0, 4, 0, 3, 0, 7, 0, 8, 0, 4, 0, 9, 0, 5, 0, 4, 0, 8, 0, 9, 0),
+"material": SubResource("StandardMaterial3D_tc24b"),
+"name": "Mulch",
+"primitive": 3,
+"uv_scale": Vector4(3, 3, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 252, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 63, 0, 0, 252, 255, 255, 63, 255, 127, 0, 0, 252, 255, 255, 63, 255, 191, 0, 0, 252, 255, 255, 63, 255, 255, 0, 0, 252, 255, 255, 63, 255, 63, 0, 0, 0, 0, 255, 63, 255, 127, 0, 0, 0, 0, 255, 63, 255, 191, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2o68g")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3hjy2"]
+data = PackedVector3Array(-1, 0, 1, -0.75, 0, 0.75, -0.75, 0, 1, -1, 0, 1, -1, 0, 0.75, -0.75, 0, 0.75, -0.75, 0, 1, -0.5, 0, 0.75, -0.5, 0, 1, -0.75, 0, 1, -0.75, 0, 0.75, -0.5, 0, 0.75, -0.5, 0, 1, -0.25, 0, 0.75, -0.25, 0, 1, -0.5, 0, 1, -0.5, 0, 0.75, -0.25, 0, 0.75, -0.25, 0, 1, 0, 0, 0.75, 0, 0, 1, -0.25, 0, 1, -0.25, 0, 0.75, 0, 0, 0.75)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7vvh"]
+resource_name = "Path_blendUp"
+cull_mode = 2
+albedo_texture = ExtResource("40_o135h")
+metallic_texture = ExtResource("41_tk2b8")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("41_tk2b8")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ss6jc"]
+_surfaces = [{
+"aabb": AABB(-1, 0, 0.25, 1, 1e-05, 0.5),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray(2, 0, 4, 0, 3, 0, 2, 0, 1, 0, 4, 0, 1, 0, 5, 0, 4, 0, 1, 0, 0, 0, 5, 0, 6, 0, 10, 0, 9, 0, 6, 0, 7, 0, 10, 0, 7, 0, 11, 0, 10, 0, 7, 0, 8, 0, 11, 0),
+"name": "Path_blendUp",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 63, 0, 0, 255, 255, 0, 0, 255, 63, 0, 0, 255, 127, 0, 0, 255, 63, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 255, 255, 0, 0, 255, 191, 0, 0, 255, 127, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 127, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6fsic"]
+resource_name = "Sketchfab_Scene_Object_14"
+_surfaces = [{
+"aabb": AABB(-1, 0, 0.25, 1, 1e-05, 0.5),
+"attribute_data": PackedByteArray(0, 0, 255, 127, 0, 0, 255, 63, 0, 0, 0, 0, 170, 42, 0, 0, 170, 42, 255, 63, 170, 42, 255, 127, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 127, 170, 170, 0, 0, 170, 170, 255, 63, 170, 170, 255, 127),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray(2, 0, 4, 0, 3, 0, 2, 0, 1, 0, 4, 0, 1, 0, 5, 0, 4, 0, 1, 0, 0, 0, 5, 0, 6, 0, 10, 0, 9, 0, 6, 0, 7, 0, 10, 0, 7, 0, 11, 0, 10, 0, 7, 0, 8, 0, 11, 0),
+"material": SubResource("StandardMaterial3D_r7vvh"),
+"name": "Path_blendUp",
+"primitive": 3,
+"uv_scale": Vector4(3, 2, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 63, 0, 0, 0, 0, 255, 127, 255, 63, 0, 0, 0, 0, 255, 255, 255, 63, 255, 63, 0, 0, 255, 255, 255, 63, 255, 63, 0, 0, 255, 127, 255, 63, 255, 63, 0, 0, 0, 0, 255, 63, 255, 191, 0, 0, 255, 255, 255, 63, 255, 191, 0, 0, 255, 127, 255, 63, 255, 191, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 255, 255, 255, 63, 255, 255, 0, 0, 255, 127, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ss6jc")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xo02p"]
+data = PackedVector3Array(-1, 0, 0.75, -0.75, 0, 0.5, -0.75, 0, 0.75, -1, 0, 0.75, -1, 0, 0.5, -0.75, 0, 0.5, -1, 0, 0.5, -0.75, 0, 0.25, -0.75, 0, 0.5, -1, 0, 0.5, -1, 0, 0.25, -0.75, 0, 0.25, -0.25, 0, 0.75, 0, 0, 0.5, 0, 0, 0.75, -0.25, 0, 0.75, -0.25, 0, 0.5, 0, 0, 0.5, -0.25, 0, 0.5, 0, 0, 0.25, 0, 0, 0.5, -0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0, 0.25)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uf60u"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0.5, 0.25, 1e-05, 0.50001),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 4, 0, 1, 0, 0, 0, 2, 0, 4, 0, 2, 0, 5, 0, 4, 0, 2, 0, 3, 0, 5, 0),
+"name": "Path_blendRight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 255, 255, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 254, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 254, 127, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_61sp1"]
+resource_name = "Sketchfab_Scene_Object_15"
+_surfaces = [{
+"aabb": AABB(0, 0, 0.5, 0.25, 1e-05, 0.50001),
+"attribute_data": PackedByteArray(255, 191, 0, 0, 255, 255, 0, 0, 255, 191, 170, 42, 255, 191, 84, 85, 255, 255, 170, 42, 255, 255, 84, 85),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 4, 0, 1, 0, 0, 0, 2, 0, 4, 0, 2, 0, 5, 0, 4, 0, 2, 0, 3, 0, 5, 0),
+"material": SubResource("StandardMaterial3D_wi72u"),
+"name": "Path_blendRight",
+"primitive": 3,
+"uv_scale": Vector4(2, 3, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 255, 63, 255, 255, 0, 0, 253, 255, 255, 63, 0, 0, 0, 0, 254, 127, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 254, 127, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_uf60u")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j5gly"]
+data = PackedVector3Array(0, 0, 1, 0.25, 0, 0.75, 0.25, 0, 1, 0, 0, 1, 0, 0, 0.75, 0.25, 0, 0.75, 0, 0, 0.75, 0.25, 0, 0.5, 0.25, 0, 0.75, 0, 0, 0.75, 0, 0, 0.5, 0.25, 0, 0.5)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8arho"]
+_surfaces = [{
+"aabb": AABB(-0.75, 0, 0.25, 0.5, 1e-05, 0.50001),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 4, 0, 3, 0, 0, 0, 1, 0, 4, 0, 1, 0, 5, 0, 4, 0, 1, 0, 2, 0, 5, 0, 3, 0, 7, 0, 6, 0, 3, 0, 4, 0, 7, 0, 4, 0, 8, 0, 7, 0, 4, 0, 5, 0, 8, 0),
+"name": "Path_end",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 254, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 0, 0, 253, 255, 0, 0, 255, 127, 0, 0, 254, 127, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 253, 255, 0, 0, 255, 255, 0, 0, 254, 127, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7cioi"]
+resource_name = "Sketchfab_Scene_Object_16"
+_surfaces = [{
+"aabb": AABB(-0.75, 0, 0.25, 0.5, 1e-05, 0.50001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 63, 0, 0, 255, 127, 255, 63, 0, 0, 255, 63, 255, 63, 255, 63, 255, 127, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 127),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 4, 0, 3, 0, 0, 0, 1, 0, 4, 0, 1, 0, 5, 0, 4, 0, 1, 0, 2, 0, 5, 0, 3, 0, 7, 0, 6, 0, 3, 0, 4, 0, 7, 0, 4, 0, 8, 0, 7, 0, 4, 0, 5, 0, 8, 0),
+"material": SubResource("StandardMaterial3D_hrdjt"),
+"name": "Path_end",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 255, 63, 0, 0, 0, 0, 254, 127, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 127, 0, 0, 253, 255, 255, 63, 255, 127, 0, 0, 254, 127, 255, 63, 255, 127, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 253, 255, 255, 63, 255, 255, 0, 0, 254, 127, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8arho")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_37il2"]
+data = PackedVector3Array(-0.75, 0, 0.75, -0.5, 0, 0.5, -0.5, 0, 0.75, -0.75, 0, 0.75, -0.75, 0, 0.5, -0.5, 0, 0.5, -0.75, 0, 0.5, -0.5, 0, 0.25, -0.5, 0, 0.5, -0.75, 0, 0.5, -0.75, 0, 0.25, -0.5, 0, 0.25, -0.5, 0, 0.75, -0.25, 0, 0.5, -0.25, 0, 0.75, -0.5, 0, 0.75, -0.5, 0, 0.5, -0.25, 0, 0.5, -0.5, 0, 0.5, -0.25, 0, 0.25, -0.25, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, 0.25, -0.25, 0, 0.25)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_an2hi"]
+_surfaces = [{
+"aabb": AABB(-0.25, 0, -0.75, 1.25001, 1e-05, 0.50001),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray(3, 0, 7, 0, 6, 0, 3, 0, 4, 0, 7, 0, 4, 0, 8, 0, 7, 0, 4, 0, 5, 0, 8, 0, 6, 0, 10, 0, 9, 0, 6, 0, 7, 0, 10, 0, 7, 0, 11, 0, 10, 0, 7, 0, 8, 0, 11, 0, 9, 0, 13, 0, 12, 0, 9, 0, 10, 0, 13, 0, 10, 0, 14, 0, 13, 0, 10, 0, 11, 0, 14, 0, 12, 0, 16, 0, 15, 0, 12, 0, 13, 0, 16, 0, 13, 0, 17, 0, 16, 0, 13, 0, 14, 0, 17, 0, 15, 0, 1, 0, 0, 0, 15, 0, 16, 0, 1, 0, 16, 0, 2, 0, 1, 0, 16, 0, 17, 0, 2, 0),
+"lods": [1e-10, PackedByteArray(3, 0, 4, 0, 6, 0, 4, 0, 8, 0, 6, 0, 4, 0, 5, 0, 8, 0, 6, 0, 8, 0, 11, 0, 6, 0, 11, 0, 9, 0, 9, 0, 11, 0, 14, 0, 9, 0, 14, 0, 12, 0, 12, 0, 14, 0, 17, 0, 12, 0, 17, 0, 15, 0, 15, 0, 17, 0, 2, 0, 15, 0, 2, 0, 1, 0, 15, 0, 1, 0, 0, 0)],
+"name": "Path_horizontal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray(254, 255, 0, 0, 253, 255, 0, 0, 254, 255, 0, 0, 254, 127, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 254, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 51, 0, 0, 253, 255, 0, 0, 50, 51, 0, 0, 254, 127, 0, 0, 50, 51, 0, 0, 0, 0, 0, 0, 101, 102, 0, 0, 253, 255, 0, 0, 101, 102, 0, 0, 254, 127, 0, 0, 101, 102, 0, 0, 0, 0, 0, 0, 152, 153, 0, 0, 253, 255, 0, 0, 152, 153, 0, 0, 254, 127, 0, 0, 152, 153, 0, 0, 0, 0, 0, 0, 203, 204, 0, 0, 253, 255, 0, 0, 203, 204, 0, 0, 254, 127, 0, 0, 203, 204, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6w0gc"]
+resource_name = "Sketchfab_Scene_Object_17"
+_surfaces = [{
+"aabb": AABB(-0.25, 0, -0.75, 1.25001, 1e-05, 0.50001),
+"attribute_data": PackedByteArray(255, 255, 255, 191, 255, 255, 255, 223, 255, 255, 255, 255, 255, 127, 255, 191, 255, 127, 255, 223, 255, 127, 255, 255, 153, 153, 255, 191, 153, 153, 255, 223, 153, 153, 255, 255, 50, 179, 255, 191, 50, 179, 255, 223, 50, 179, 255, 255, 204, 204, 255, 191, 204, 204, 255, 223, 204, 204, 255, 255, 101, 230, 255, 191, 101, 230, 255, 223, 101, 230, 255, 255),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray(3, 0, 7, 0, 6, 0, 3, 0, 4, 0, 7, 0, 4, 0, 8, 0, 7, 0, 4, 0, 5, 0, 8, 0, 6, 0, 10, 0, 9, 0, 6, 0, 7, 0, 10, 0, 7, 0, 11, 0, 10, 0, 7, 0, 8, 0, 11, 0, 9, 0, 13, 0, 12, 0, 9, 0, 10, 0, 13, 0, 10, 0, 14, 0, 13, 0, 10, 0, 11, 0, 14, 0, 12, 0, 16, 0, 15, 0, 12, 0, 13, 0, 16, 0, 13, 0, 17, 0, 16, 0, 13, 0, 14, 0, 17, 0, 15, 0, 1, 0, 0, 0, 15, 0, 16, 0, 1, 0, 16, 0, 2, 0, 1, 0, 16, 0, 17, 0, 2, 0),
+"lods": [1e-10, PackedByteArray(3, 0, 4, 0, 6, 0, 4, 0, 8, 0, 6, 0, 4, 0, 5, 0, 8, 0, 6, 0, 8, 0, 11, 0, 6, 0, 11, 0, 9, 0, 9, 0, 11, 0, 14, 0, 9, 0, 14, 0, 12, 0, 12, 0, 14, 0, 17, 0, 12, 0, 17, 0, 15, 0, 15, 0, 17, 0, 2, 0, 15, 0, 2, 0, 1, 0, 15, 0, 1, 0, 0, 0)],
+"material": SubResource("StandardMaterial3D_ryqjc"),
+"name": "Path_horizontal",
+"primitive": 3,
+"uv_scale": Vector4(5, 4, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray(254, 255, 0, 0, 253, 255, 255, 63, 254, 255, 0, 0, 254, 127, 255, 63, 254, 255, 0, 0, 0, 0, 255, 63, 0, 0, 0, 0, 253, 255, 255, 63, 0, 0, 0, 0, 254, 127, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 50, 51, 0, 0, 253, 255, 255, 63, 50, 51, 0, 0, 254, 127, 255, 63, 50, 51, 0, 0, 0, 0, 255, 63, 101, 102, 0, 0, 253, 255, 255, 63, 101, 102, 0, 0, 254, 127, 255, 63, 101, 102, 0, 0, 0, 0, 255, 63, 152, 153, 0, 0, 253, 255, 255, 63, 152, 153, 0, 0, 254, 127, 255, 63, 152, 153, 0, 0, 0, 0, 255, 63, 203, 204, 0, 0, 253, 255, 255, 63, 203, 204, 0, 0, 254, 127, 255, 63, 203, 204, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_an2hi")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_unruw"]
+data = PackedVector3Array(-0.25, 0, -0.25, 0, 0, -0.5, 0, 0, -0.25, -0.25, 0, -0.25, -0.25, 0, -0.5, 0, 0, -0.5, -0.25, 0, -0.5, 0, 0, -0.75, 0, 0, -0.5, -0.25, 0, -0.5, -0.25, 0, -0.75, 0, 0, -0.75, 0, 0, -0.25, 0.25, 0, -0.5, 0.25, 0, -0.25, 0, 0, -0.25, 0, 0, -0.5, 0.25, 0, -0.5, 0, 0, -0.5, 0.25, 0, -0.75, 0.25, 0, -0.5, 0, 0, -0.5, 0, 0, -0.75, 0.25, 0, -0.75, 0.25, 0, -0.25, 0.5, 0, -0.5, 0.5, 0, -0.25, 0.25, 0, -0.25, 0.25, 0, -0.5, 0.5, 0, -0.5, 0.25, 0, -0.5, 0.5, 0, -0.75, 0.5, 0, -0.5, 0.25, 0, -0.5, 0.25, 0, -0.75, 0.5, 0, -0.75, 0.5, 0, -0.25, 0.75, 0, -0.5, 0.75, 0, -0.25, 0.5, 0, -0.25, 0.5, 0, -0.5, 0.75, 0, -0.5, 0.5, 0, -0.5, 0.75, 0, -0.75, 0.75, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, -0.75, 0.75, 0, -0.75, 0.75, 0, -0.25, 1, 0, -0.5, 1, 0, -0.25, 0.75, 0, -0.25, 0.75, 0, -0.5, 1, 0, -0.5, 0.75, 0, -0.5, 1, 0, -0.75, 1, 0, -0.5, 0.75, 0, -0.5, 0.75, 0, -0.75, 1, 0, -0.75)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_01o3t"]
+data = PackedVector3Array(-0.25, 0, -0.25, 0, 0, -0.5, 0, 0, -0.25, -0.25, 0, -0.25, -0.25, 0, -0.5, 0, 0, -0.5, -0.25, 0, -0.5, 0, 0, -0.75, 0, 0, -0.5, -0.25, 0, -0.5, -0.25, 0, -0.75, 0, 0, -0.75, 0, 0, -0.25, 0.25, 0, -0.5, 0.25, 0, -0.25, 0, 0, -0.25, 0, 0, -0.5, 0.25, 0, -0.5, 0, 0, -0.5, 0.25, 0, -0.75, 0.25, 0, -0.5, 0, 0, -0.5, 0, 0, -0.75, 0.25, 0, -0.75, 0.25, 0, -0.25, 0.5, 0, -0.5, 0.5, 0, -0.25, 0.25, 0, -0.25, 0.25, 0, -0.5, 0.5, 0, -0.5, 0.25, 0, -0.5, 0.5, 0, -0.75, 0.5, 0, -0.5, 0.25, 0, -0.5, 0.25, 0, -0.75, 0.5, 0, -0.75, 0.5, 0, -0.25, 0.75, 0, -0.5, 0.75, 0, -0.25, 0.5, 0, -0.25, 0.5, 0, -0.5, 0.75, 0, -0.5, 0.5, 0, -0.5, 0.75, 0, -0.75, 0.75, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, -0.75, 0.75, 0, -0.75, 0.75, 0, -0.25, 1, 0, -0.5, 1, 0, -0.25, 0.75, 0, -0.25, 0.75, 0, -0.5, 1, 0, -0.5, 0.75, 0, -0.5, 1, 0, -0.75, 1, 0, -0.5, 0.75, 0, -0.5, 0.75, 0, -0.75, 1, 0, -0.75)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tw2ij"]
+_surfaces = [{
+"aabb": AABB(-0.75, 0, -0.25, 0.5, 1e-05, 0.50001),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 4, 0, 3, 0, 0, 0, 1, 0, 4, 0, 1, 0, 5, 0, 4, 0, 1, 0, 2, 0, 5, 0, 3, 0, 7, 0, 6, 0, 3, 0, 4, 0, 7, 0, 4, 0, 8, 0, 7, 0, 4, 0, 5, 0, 8, 0),
+"name": "Path_vertical",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 254, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 0, 0, 253, 255, 0, 0, 255, 127, 0, 0, 254, 127, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 253, 255, 0, 0, 255, 255, 0, 0, 254, 127, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jk5gc"]
+resource_name = "Sketchfab_Scene_Object_18"
+_surfaces = [{
+"aabb": AABB(-0.75, 0, -0.25, 0.5, 1e-05, 0.50001),
+"attribute_data": PackedByteArray(0, 0, 255, 127, 0, 0, 255, 191, 0, 0, 255, 255, 255, 63, 255, 127, 255, 63, 255, 191, 255, 63, 255, 255, 255, 127, 255, 127, 255, 127, 255, 191, 255, 127, 255, 255),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 4, 0, 3, 0, 0, 0, 1, 0, 4, 0, 1, 0, 5, 0, 4, 0, 1, 0, 2, 0, 5, 0, 3, 0, 7, 0, 6, 0, 3, 0, 4, 0, 7, 0, 4, 0, 8, 0, 7, 0, 4, 0, 5, 0, 8, 0),
+"material": SubResource("StandardMaterial3D_jfrkg"),
+"name": "Path_vertical",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 255, 63, 0, 0, 0, 0, 254, 127, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 127, 0, 0, 253, 255, 255, 63, 255, 127, 0, 0, 254, 127, 255, 63, 255, 127, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 253, 255, 255, 63, 255, 255, 0, 0, 254, 127, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tw2ij")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4dscc"]
+data = PackedVector3Array(-0.75, 0, 0.25, -0.5, 0, 0, -0.5, 0, 0.25, -0.75, 0, 0.25, -0.75, 0, 0, -0.5, 0, 0, -0.75, 0, 0, -0.5, 0, -0.25, -0.5, 0, 0, -0.75, 0, 0, -0.75, 0, -0.25, -0.5, 0, -0.25, -0.5, 0, 0.25, -0.25, 0, 0, -0.25, 0, 0.25, -0.5, 0, 0.25, -0.5, 0, 0, -0.25, 0, 0, -0.5, 0, 0, -0.25, 0, -0.25, -0.25, 0, 0, -0.5, 0, 0, -0.5, 0, -0.25, -0.25, 0, -0.25)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_myarw"]
+_surfaces = [{
+"aabb": AABB(-0.75, 0, -0.75, 0.5, 1e-05, 0.50001),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 4, 0, 3, 0, 0, 0, 1, 0, 4, 0, 1, 0, 5, 0, 4, 0, 1, 0, 2, 0, 5, 0, 3, 0, 7, 0, 6, 0, 3, 0, 4, 0, 7, 0, 4, 0, 8, 0, 7, 0, 4, 0, 5, 0, 8, 0),
+"name": "Path_Corner-LowerRight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 254, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 0, 0, 253, 255, 0, 0, 255, 127, 0, 0, 254, 127, 0, 0, 255, 127, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 253, 255, 0, 0, 255, 255, 0, 0, 254, 127, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vje00"]
+resource_name = "Sketchfab_Scene_Object_19"
+_surfaces = [{
+"aabb": AABB(-0.75, 0, -0.75, 0.5, 1e-05, 0.50001),
+"attribute_data": PackedByteArray(0, 0, 255, 191, 0, 0, 255, 223, 0, 0, 255, 255, 255, 63, 255, 191, 255, 63, 255, 223, 255, 63, 255, 255, 255, 127, 255, 191, 255, 127, 255, 223, 255, 127, 255, 255),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 4, 0, 3, 0, 0, 0, 1, 0, 4, 0, 1, 0, 5, 0, 4, 0, 1, 0, 2, 0, 5, 0, 3, 0, 7, 0, 6, 0, 3, 0, 4, 0, 7, 0, 4, 0, 8, 0, 7, 0, 4, 0, 5, 0, 8, 0),
+"material": SubResource("StandardMaterial3D_q07rg"),
+"name": "Path_Corner-LowerRight",
+"primitive": 3,
+"uv_scale": Vector4(2, 4, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 255, 63, 0, 0, 0, 0, 254, 127, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 127, 0, 0, 253, 255, 255, 63, 255, 127, 0, 0, 254, 127, 255, 63, 255, 127, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 253, 255, 255, 63, 255, 255, 0, 0, 254, 127, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_myarw")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4uh25"]
+data = PackedVector3Array(-0.75, 0, -0.25, -0.5, 0, -0.5, -0.5, 0, -0.25, -0.75, 0, -0.25, -0.75, 0, -0.5, -0.5, 0, -0.5, -0.75, 0, -0.5, -0.5, 0, -0.75, -0.5, 0, -0.5, -0.75, 0, -0.5, -0.75, 0, -0.75, -0.5, 0, -0.75, -0.5, 0, -0.25, -0.25, 0, -0.5, -0.25, 0, -0.25, -0.5, 0, -0.25, -0.5, 0, -0.5, -0.25, 0, -0.5, -0.5, 0, -0.5, -0.25, 0, -0.75, -0.25, 0, -0.5, -0.5, 0, -0.5, -0.5, 0, -0.75, -0.25, 0, -0.75)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj4yq"]
 bg_color = Color(0.6, 0.6, 0.6, 0.184314)
 corner_radius_top_right = 5
@@ -1238,6 +2077,7 @@ shadow_enabled = true
 environment = SubResource("Environment_dvd1r")
 
 [node name="Player" parent="." instance=ExtResource("1_binyw")]
+transform = Transform3D(-0.0946156, 0, 0.592493, 0, 0.6, 0, -0.592493, 0, -0.0946156, 0, 0, 4.20603)
 
 [node name="village" type="Node3D" parent="."]
 
@@ -1470,7 +2310,7 @@ mesh = SubResource("ArrayMesh_phbbs")
 skeleton = NodePath("")
 
 [node name="house1_32" type="Node3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
-transform = Transform3D(-0.999862, 0, 0.0165973, 0, 1, 0, -0.0165973, 0, -0.999862, 12.3412, 0, 7.96977)
+transform = Transform3D(0.159002, 0, -0.987278, 0, 1, 0, 0.987278, 0, 0.159002, 19.9902, 0, 4.0343)
 
 [node name="Object_64" type="MeshInstance3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house1_32"]
 mesh = SubResource("ArrayMesh_kr1rt")
@@ -1490,16 +2330,325 @@ skeleton = NodePath("")
 [node name="toitrougeanilow_001_31" type="Node3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house1_32"]
 
 [node name="Object_68" type="MeshInstance3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house1_32/toitrougeanilow_001_31"]
+transform = Transform3D(1, 0, -1.86265e-09, 0, 1, 0, 1.86265e-09, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_a3han")
 skeleton = NodePath("")
 
 [node name="map" type="Node3D" parent="."]
 
 [node name="floor" type="CSGBox3D" parent="map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.37855, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3, 0)
 material_override = SubResource("StandardMaterial3D_flfus")
 use_collision = true
 size = Vector3(100, 1, 100)
+
+[node name="Sketchfab_Scene" type="Node3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3627, -0.755453, 9.05107)
+
+[node name="Sketchfab_model" type="Node3D" parent="map/Sketchfab_Scene"]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
+
+[node name="root" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model"]
+
+[node name="GLTF_SceneRootNode" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root"]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, -1, 0, 1, 2.22045e-16, 0, 0, 0)
+
+[node name="Plane_001_1" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5762, 0, -3.61857)
+
+[node name="Object_4" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_001_1"]
+mesh = SubResource("ArrayMesh_ic57p")
+skeleton = NodePath("")
+
+[node name="Plane_003_2" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2716, 0, -8.32743)
+
+[node name="Object_6" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_003_2"]
+mesh = SubResource("ArrayMesh_nf15p")
+skeleton = NodePath("")
+
+[node name="Plane_005_3" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(-0.999611, 0, 0.0279042, 0, 1, 0, -0.0279042, 0, -0.999611, 30.8356, -0.0973186, -0.697708)
+
+[node name="Object_8" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_005_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134534, 0.0166628, -0.589395)
+mesh = SubResource("ArrayMesh_jfiat")
+skeleton = NodePath("")
+
+[node name="Plane_006_4" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26978, 0, -5.97308)
+
+[node name="Object_10" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_006_4"]
+mesh = SubResource("ArrayMesh_8h05f")
+skeleton = NodePath("")
+
+[node name="Plane_007_5" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19679, 0, -8.32743)
+
+[node name="Object_12" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_007_5"]
+mesh = SubResource("ArrayMesh_pi2u0")
+skeleton = NodePath("")
+
+[node name="Plane_009_6" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13837, 0, -3.61857)
+
+[node name="Object_14" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_009_6"]
+mesh = SubResource("ArrayMesh_k2tdk")
+skeleton = NodePath("")
+
+[node name="Plane_010_7" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16454, 0, -5.97308)
+
+[node name="Object_16" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_010_7"]
+mesh = SubResource("ArrayMesh_04as4")
+skeleton = NodePath("")
+
+[node name="Plane_011_8" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63111, 0, -8.32743)
+
+[node name="Object_18" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_011_8"]
+mesh = SubResource("ArrayMesh_hwh5b")
+skeleton = NodePath("")
+
+[node name="Plane_012_9" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7293, 0, 3.18353)
+
+[node name="Object_20" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_9"]
+mesh = SubResource("ArrayMesh_ycaam")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_9/Object_20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_9/Object_20/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_r7hoo")
+
+[node name="Plane_012_10" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7293, 0, 1.29459)
+
+[node name="Object_20" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_10"]
+mesh = SubResource("ArrayMesh_ycaam")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_10/Object_20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_10/Object_20/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_713y1")
+
+[node name="Object_21" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029, -1.345)
+mesh = SubResource("ArrayMesh_ycaam")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_10/Object_21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_10/Object_21/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1dynx")
+
+[node name="Plane_012_11" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(-0.0164926, 0, 0.999864, 0, 1, 0, -0.999864, 0, -0.0164926, 28.6584, 0, -1.61785)
+
+[node name="Object_20" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_012_11"]
+mesh = SubResource("ArrayMesh_ycaam")
+skeleton = NodePath("")
+
+[node name="Plane_013_10" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63796, 0, -5.92317)
+
+[node name="Object_22" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_013_10"]
+mesh = SubResource("ArrayMesh_23kk3")
+skeleton = NodePath("")
+
+[node name="Plane_014_11" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(-0.0358239, 0, 0.999358, 0, 1, 0, -0.999358, 0, -0.0358239, 37.8321, 0, -3.11266)
+
+[node name="Object_24" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_014_11"]
+transform = Transform3D(0.999376, 0, -0.0353356, 0, 1, 0, 0.0353356, 0, 0.999376, -0.92317, -0.0315346, -1.56785)
+mesh = SubResource("ArrayMesh_moy6c")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_014_11/Object_24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_014_11/Object_24/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_m4qiy")
+
+[node name="Plane_015_12" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1685, 0, -10.8549)
+
+[node name="Object_26" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12"]
+transform = Transform3D(9.5, 0, 0, 0, 9.5, 0, 0, 0, 9.5, 35.1839, 0, 0.910856)
+mesh = SubResource("ArrayMesh_uqupe")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12/Object_26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12/Object_26/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ojvr3")
+
+[node name="Object_27" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 24.9987, 0, 30.5447)
+mesh = SubResource("ArrayMesh_uqupe")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12/Object_27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12/Object_27/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_oatfy")
+
+[node name="Object_28" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 24.9987, 0, -28.0001)
+mesh = SubResource("ArrayMesh_uqupe")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12/Object_28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12/Object_28/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6bi3h")
+
+[node name="Object_29" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -33.9862, 0, -28.0001)
+mesh = SubResource("ArrayMesh_uqupe")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12/Object_29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_12/Object_29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_oyrnw")
+
+[node name="Plane_015_13" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1685, -2.94629, -10.8549)
+
+[node name="Object_26" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_13"]
+mesh = SubResource("ArrayMesh_uqupe")
+skeleton = NodePath("")
+
+[node name="Plane_015_14" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1685, -2.94629, -11.6499)
+
+[node name="Object_26" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_015_14"]
+mesh = SubResource("ArrayMesh_uqupe")
+skeleton = NodePath("")
+
+[node name="Plane_016_13" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(4.59056, 0, 0, 0, 4.59056, 0, 0, 0, 4.59056, 24.0314, 0, 0.712008)
+
+[node name="Object_28" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+mesh = SubResource("ArrayMesh_rle2f")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_28/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4vwge")
+
+[node name="Object_29" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+mesh = SubResource("ArrayMesh_qfkyg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3hjy2")
+
+[node name="Object_30" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+mesh = SubResource("ArrayMesh_6fsic")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_30/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xo02p")
+
+[node name="Object_31" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_61sp1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_31/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_j5gly")
+
+[node name="Object_32" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+mesh = SubResource("ArrayMesh_7cioi")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_32/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_37il2")
+
+[node name="Object_33" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+mesh = SubResource("ArrayMesh_6w0gc")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_33"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_33/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_unruw")
+
+[node name="Object_36" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46778, 0, 0)
+mesh = SubResource("ArrayMesh_6w0gc")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_36"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_36/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_01o3t")
+
+[node name="Object_34" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+mesh = SubResource("ArrayMesh_jk5gc")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_34"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_34/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4dscc")
+
+[node name="Object_35" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
+mesh = SubResource("ArrayMesh_vje00")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_35"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_35/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4uh25")
+
+[node name="Plane_016_14" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
+transform = Transform3D(-3.47252, 0, 3.00248, 0, 4.59056, 0, -3.00248, 0, -3.47252, 44.1431, 0, -17.505)
+
+[node name="Object_28" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+mesh = SubResource("ArrayMesh_rle2f")
+skeleton = NodePath("")
+
+[node name="Object_29" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+mesh = SubResource("ArrayMesh_qfkyg")
+skeleton = NodePath("")
+
+[node name="Object_30" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+mesh = SubResource("ArrayMesh_6fsic")
+skeleton = NodePath("")
+
+[node name="Object_31" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_61sp1")
+skeleton = NodePath("")
+
+[node name="Object_32" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+mesh = SubResource("ArrayMesh_7cioi")
+skeleton = NodePath("")
+
+[node name="Object_33" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+mesh = SubResource("ArrayMesh_6w0gc")
+skeleton = NodePath("")
+
+[node name="Object_34" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+mesh = SubResource("ArrayMesh_jk5gc")
+skeleton = NodePath("")
+
+[node name="Object_35" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+mesh = SubResource("ArrayMesh_vje00")
+skeleton = NodePath("")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
@@ -1558,10 +2707,10 @@ expand_mode = 1
 
 [node name="Nickname" type="Label" parent="Control/PlayerInfoBox"]
 layout_mode = 0
-offset_left = 141.0
-offset_top = 4.0
-offset_right = 337.0
-offset_bottom = 64.0
+offset_left = 158.0
+offset_top = 20.0
+offset_right = 354.0
+offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("17_hhqgb")
 theme_override_font_sizes/font_size = 36
 text = "Home Lander"
@@ -1655,5 +2804,8 @@ offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Grant coins"
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("46_d7pwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0964, -0.909688, -2.12395)
 
 [connection signal="pressed" from="Control/Grantcoin" to="Control" method="_on_grantcoin_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://vhxbumnswpns"]
+[gd_scene load_steps=109 format=3 uid="uid://vhxbumnswpns"]
 
 [ext_resource type="PackedScene" uid="uid://b1ubihsbgfdq5" path="res://scripts/player.tscn" id="1_binyw"]
 [ext_resource type="Texture2D" uid="uid://wshmygrvgmnk" path="res://assets/village_assets_0.png" id="1_vm748"]
@@ -15,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dfv5mfeku4eo3" path="res://assets/village_assets_11.png" id="12_wfx4o"]
 [ext_resource type="Texture2D" uid="uid://dhhje56afgu06" path="res://assets/village_assets_12.png" id="13_rxmi8"]
 [ext_resource type="Texture2D" uid="uid://c3tsgpq3k48ho" path="res://textures/grids/Dark/texture_02.png" id="15_3fida"]
+[ext_resource type="Texture2D" uid="uid://rpv7wej2d6w0" path="res://avatar.png" id="16_porr5"]
+[ext_resource type="Script" path="res://Control.gd" id="16_xsk7h"]
+[ext_resource type="Texture2D" uid="uid://ue4co0ls7dup" path="res://two-coins.svg" id="17_8cdli"]
+[ext_resource type="FontFile" uid="uid://b0m40l4jj8mxs" path="res://RobotoCondensed-Italic-VariableFont_wght.ttf" id="17_hhqgb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbnp8"]
 sky_horizon_color = Color(0.65789, 0.650751, 0.655116, 1)
@@ -1196,6 +1200,34 @@ shadow_mesh = SubResource("ArrayMesh_w8utv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flfus"]
 albedo_texture = ExtResource("15_3fida")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj4yq"]
+bg_color = Color(0.6, 0.6, 0.6, 0.184314)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gon4"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hitvo"]
+bg_color = Color(0.215453, 0.674623, 0.692302, 1)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igayk"]
+bg_color = Color(0.6, 0.6, 0.6, 0.223529)
+corner_radius_top_left = 8
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg8yc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 5
+
 [node name="main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -1468,3 +1500,160 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.37855, 0)
 material_override = SubResource("StandardMaterial3D_flfus")
 use_collision = true
 size = Vector3(100, 1, 100)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+use_collision = true
+size = Vector3(100, 5, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="map"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -50, 0, 0)
+use_collision = true
+size = Vector3(100, 5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="map"]
+transform = Transform3D(-0.00677179, 0, 0.999977, 0, 1, 0, -0.999977, 0, -0.00677179, 50, 0, 0)
+use_collision = true
+size = Vector3(100, 5, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+use_collision = true
+size = Vector3(100, 5, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 1162.0
+offset_bottom = 647.0
+script = ExtResource("16_xsk7h")
+
+[node name="PlayerInfoBox" type="Panel" parent="Control"]
+layout_mode = 1
+offset_right = 382.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yj4yq")
+
+[node name="AvatarFrame" type="Panel" parent="Control/PlayerInfoBox"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -63.0
+offset_right = 134.0
+offset_bottom = 63.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gon4")
+
+[node name="Avatar" type="TextureRect" parent="Control/PlayerInfoBox/AvatarFrame"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 11.0
+offset_right = 119.0
+offset_bottom = 118.0
+texture = ExtResource("16_porr5")
+expand_mode = 1
+
+[node name="Nickname" type="Label" parent="Control/PlayerInfoBox"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 4.0
+offset_right = 337.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("17_hhqgb")
+theme_override_font_sizes/font_size = 36
+text = "Home Lander"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/PlayerInfoBox"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 153.0
+offset_top = -47.0
+offset_right = -5.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0.709804, 0, 1)
+theme_override_colors/font_outline_color = Color(0.67451, 0, 0, 1)
+theme_override_styles/fill = SubResource("StyleBoxFlat_hitvo")
+value = 21.0
+
+[node name="CoinBox" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -328.0
+offset_bottom = 149.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_igayk")
+
+[node name="Nickname2" type="Label" parent="Control/CoinBox"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 12.0
+offset_right = 324.0
+offset_bottom = 143.0
+theme_override_fonts/font = ExtResource("17_hhqgb")
+theme_override_font_sizes/font_size = 36
+text = "COINS:"
+vertical_alignment = 1
+
+[node name="CoinsValue" type="Label" parent="Control/CoinBox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 249.0
+offset_top = 42.0
+offset_right = 324.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("17_hhqgb")
+theme_override_font_sizes/font_size = 36
+text = "?"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Control/CoinBox"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -54.5
+offset_right = 158.0
+offset_bottom = 54.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sg8yc")
+
+[node name="TextureRect" type="TextureRect" parent="Control/CoinBox/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -41.5
+offset_right = 114.0
+offset_bottom = 41.5
+grow_vertical = 2
+texture = ExtResource("17_8cdli")
+expand_mode = 1
+
+[node name="Grantcoin" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -22.0
+offset_right = 196.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Grant coins"
+
+[connection signal="pressed" from="Control/Grantcoin" to="Control" method="_on_grantcoin_pressed"]

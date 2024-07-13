@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="village"
-run/main_scene="res://main.tscn"
+run/main_scene="res://landingpage.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="canvas_items"

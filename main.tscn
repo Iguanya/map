@@ -2559,7 +2559,6 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_xo02p")
 
 [node name="Object_31" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_61sp1")
 skeleton = NodePath("")
 
@@ -2611,9 +2610,6 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_35"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_13/Object_35/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_4uh25")
-
 [node name="Plane_016_14" type="Node3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode"]
 transform = Transform3D(-3.47252, 0, 3.00248, 0, 4.59056, 0, -3.00248, 0, -3.47252, 44.1431, 0, -17.505)
 
@@ -2630,7 +2626,6 @@ mesh = SubResource("ArrayMesh_6fsic")
 skeleton = NodePath("")
 
 [node name="Object_31" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_61sp1")
 skeleton = NodePath("")
 
@@ -2649,6 +2644,10 @@ skeleton = NodePath("")
 [node name="Object_35" type="MeshInstance3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
 mesh = SubResource("ArrayMesh_vje00")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_016_14"]
+transform = Transform3D(-0.756447, 0, -0.654054, 0, 1, 0, 0.654054, 0, -0.756447, 0.718544, 0, -5.86733)
+shape = SubResource("ConcavePolygonShape3D_4uh25")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)

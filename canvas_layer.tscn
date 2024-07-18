@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfg6qw4bxcvml"]
+
+[ext_resource type="Script" path="res://scripts/multi_player.gd" id="1_xl8b7"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_xl8b7")
+
+[node name="Host" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.5
+offset_right = 65.5
+offset_bottom = 62.0
+grow_horizontal = 2
+scale = Vector2(2.90757, 3.06552)
+size_flags_horizontal = 4
+text = "Host"
+
+[node name="Join" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -55.0
+offset_right = 82.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.72542, 1.68841)
+text = "Join"
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cameraman walking
+* source:	https://sketchfab.com/3d-models/cameraman-walking-216f1850e3734fa986168126266f079d
+* author:	jeremynaruto02 (https://sketchfab.com/jeremynaruto02)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cameraman walking" (https://sketchfab.com/3d-models/cameraman-walking-216f1850e3734fa986168126266f079d) by jeremynaruto02 (https://sketchfab.com/jeremynaruto02) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

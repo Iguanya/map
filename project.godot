@@ -17,5 +17,4 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckpnvp2n4i5ai"]
+[gd_scene load_steps=6 format=3 uid="uid://ckpnvp2n4i5ai"]
 
 [ext_resource type="Texture2D" uid="uid://bqgp52sxkgjbq" path="res://assets/0_2.jpeg" id="1_62iu4"]
+[ext_resource type="Script" path="res://scripts/landing_page.gd" id="1_m4bps"]
 [ext_resource type="FontFile" uid="uid://b88st5vkmv41n" path="res://assets/theleagueof-orbitron-13e6a52/Orbitron Black.otf" id="2_43lnf"]
 [ext_resource type="Texture2D" uid="uid://cbnb1ntvrk7gm" path="res://assets/baobab.png" id="2_3465n"]
 [ext_resource type="FontFile" uid="uid://edjhappo5ati" path="res://assets/OFT/Exo2.0-Light.otf" id="4_nk1fd"]
@@ -16,6 +17,7 @@ offset_right = 1226.0
 offset_bottom = 670.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_m4bps")
 metadata/_edit_use_anchors_ = true
 
 [node name="background" type="TextureRect" parent="firstpage"]
@@ -86,3 +88,5 @@ theme_override_colors/default_color = Color(0.992701, 0.90227, 0.891077, 1)
 theme_override_fonts/normal_font = ExtResource("4_nk1fd")
 theme_override_font_sizes/normal_font_size = 20
 text = "Roots to grow game is a strategic game that that emphasizes colaboration and community building.Players work together to develop a vibrant town, reducing individuals risk and fostering collective growth.The game uses resources management and cooperative mechanics to tell a story about the power of community and shared prosperity"
+
+[connection signal="pressed" from="firstpage/playbuttton" to="firstpage" method="_on_playbuttton_pressed"]

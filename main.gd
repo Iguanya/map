@@ -26,9 +26,6 @@ func _ready():
 	# Spawn local player if this is the server or client
 	spawn_player(multiplayer.get_unique_id())
 
-	# Remove excess players if any
-	remove_excess_players()
-
 func get_unique_id():
 	if available_ids.size() > 0:
 		var random_index = randi() % available_ids.size()

@@ -2,9 +2,10 @@ extends CanvasLayer
 
 var peer = ENetMultiplayerPeer.new()
 @export var max_players = 8
-@onready var host = $Host
-@onready var join = $Join
-var players = {}  # Dictionary to hold player instances
+@onready var host_button = $Host
+@onready var join_button = $Join
+@onready var multispawner = $spawner
+var num_instances = 0
 
 signal server_created
 signal joined_server
@@ -12,18 +13,19 @@ signal player_connected(id)
 signal player_disconnected(id)
 
 func _ready():
-	# Connect buttons or input actions for hosting and joining
-	if not host.is_connected("pressed", Callable(self, "_on_host_pressed")):
-		host.connect("pressed", Callable(self, "_on_host_pressed"))
+	if not host_button.is_connected("pressed", Callable(self, "_on_host_pressed")):
+		host_button.connect("pressed", Callable(self, "_on_host_pressed"))
+	if not join_button.is_connected("pressed", Callable(self, "_on_join_pressed")):
+		join_button.connect("pressed", Callable(self, "_on_join_pressed"))
 	
-	if not join.is_connected("pressed", Callable(self, "_on_join_pressed")):
-		join.connect("pressed", Callable(self, "_on_join_pressed"))
-	
-	# Connect to signals for managing player connections
-	connect("server_created", Callable(self, "_on_server_created"))
-	connect("joined_server", Callable(self, "_on_joined_server"))
-	connect("player_connected", Callable(self, "_on_player_connected"))
-	connect("player_disconnected", Callable(self, "_on_player_disconnected"))
+	if not is_connected("server_created", Callable(self, "_on_server_created")):
+		connect("server_created", Callable(self, "_on_server_created"))
+	if not is_connected("joined_server", Callable(self, "_on_joined_server")):
+		connect("joined_server", Callable(self, "_on_joined_server"))
+	if not is_connected("player_connected", Callable(self, "_on_player_connected")):
+		connect("player_connected", Callable(self, "_on_player_connected"))
+	if not is_connected("player_disconnected", Callable(self, "_on_player_disconnected")):
+		connect("player_disconnected", Callable(self, "_on_player_disconnected"))
 
 	print("Ready function executed, waiting for host or join.")
 
@@ -67,43 +69,22 @@ func _on_server_created():
 	print("Server created in main scene.")
 	$Host.hide()
 	$Join.hide()
-	# Spawn the local player
-	spawn_local_player()
+	if multispawner:
+		multispawner.spawn_player(multiplayer.get_unique_id())
 
 func _on_joined_server():
 	print("Joined server in main scene.")
 	$Host.hide()
 	$Join.hide()
-	# Spawn the local player
-	spawn_local_player()
-
-func spawn_local_player():
-	var main_scene = get_tree().current_scene
-	if main_scene.has_node("spawner"):
-		var spawner = main_scene.get_node("spawner")
-		if spawner:
-			spawner.spawn_player(multiplayer.get_unique_id())
-	else:
-		print("Spawner node not found in the main scene.")
+	if multispawner:
+		multispawner.spawn_player(multiplayer.get_unique_id())
 
 func _on_player_connected(id):
 	print("Player connected with ID: ", id)
-	if not players.has(id):
-		spawn_player(id)
-	emit_signal("player_connected", id)
+	if multispawner:
+		multispawner.spawn_player(id)
 
 func _on_player_disconnected(id):
 	print("Player disconnected with ID: ", id)
-	if players.has(id):
-		remove_player(id)
-	emit_signal("player_disconnected", id)
-
-func spawn_player(id):
-	# Implement the function to spawn a player
-	print("Spawning player with ID: ", id)
-	# Add your spawn logic here
-
-func remove_player(id):
-	# Implement the function to remove a player
-	print("Removing player with ID: ", id)
-	# Add your removal logic here
+	if multispawner:
+		multispawner.remove_player(id)

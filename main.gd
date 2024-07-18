@@ -1,32 +1,22 @@
 extends Node
 
-@export var player_scenes: Array[PackedScene]  # An array of PackedScene
+@export var player_scenes: Array[PackedScene]
 var players = {}
 var available_ids = [1, 2, 3, 4, 5, 6, 7, 8]
-var current_scene_index = 0  # To keep track of the current player scene
-var network_id_to_player_id = {}  # Mapping of network IDs to player IDs
+var current_scene_index = 0
+var network_id_to_player_id = {}
 
 signal player_spawned(id, player)
 
-@onready var multispawner = $spawner
-
 func _ready():
 	print("MultiplayerSpawner ready.")
-	set_process(true)
-
 	multiplayer.connect("peer_connected", Callable(self, "_on_peer_connected"))
 	multiplayer.connect("peer_disconnected", Callable(self, "_on_peer_disconnected"))
 
-	# Spawn players for currently connected peers
 	for id in multiplayer.get_peers():
 		if id != multiplayer.get_unique_id():
 			spawn_player(id)
-
-	# Spawn local player if this is the server or client
 	spawn_player(multiplayer.get_unique_id())
-
-	# Remove excess players if any
-	remove_excess_players()
 
 func get_unique_id():
 	if available_ids.size() > 0:
@@ -37,9 +27,6 @@ func get_unique_id():
 		return -1
 
 func get_next_player_scene():
-	if player_scenes.size() == 0:
-		print("Player scenes not set.")
-		return null
 	var scene = player_scenes[current_scene_index % player_scenes.size()]
 	current_scene_index += 1
 	return scene
@@ -51,6 +38,10 @@ func spawn_player(network_id):
 
 	print("Attempting to spawn player with Network ID: ", network_id)
 
+	if player_scenes.size() == 0:
+		print("Player scenes not set.")
+		return null
+
 	var player_id = get_unique_id()
 	if player_id == -1:
 		print("No available player IDs.")
@@ -59,10 +50,6 @@ func spawn_player(network_id):
 	network_id_to_player_id[network_id] = player_id
 
 	var player_scene = get_next_player_scene()
-	if not player_scene:
-		print("Failed to get player scene.")
-		return null
-
 	var player_instance = player_scene.instantiate()
 	if not player_instance:
 		print("Failed to instantiate player scene.")
@@ -71,7 +58,7 @@ func spawn_player(network_id):
 	player_instance.name = str(player_id)
 	add_child(player_instance)
 	players[network_id] = player_instance
-	available_ids.erase(player_id)  # Remove the ID from available IDs
+	available_ids.erase(player_id)
 	print("Player spawned with Network ID: ", network_id, " and Player ID: ", player_id)
 	emit_signal("player_spawned", player_id, player_instance)
 	return player_instance
@@ -83,7 +70,7 @@ func remove_player(network_id):
 		players[network_id].queue_free()
 		players.erase(network_id)
 		network_id_to_player_id.erase(network_id)
-		available_ids.append(player_id)  # Add the ID back to available IDs
+		available_ids.append(player_id)
 		print("Player removed with Network ID: ", network_id, " and Player ID: ", player_id)
 	else:
 		print("Network ID not found in players dictionary.")
@@ -96,11 +83,3 @@ func _on_peer_connected(id):
 func _on_peer_disconnected(id):
 	print("Peer disconnected with Network ID:", id)
 	remove_player(id)
-
-func remove_excess_players():
-	var excess_players = []
-	for network_id in players:
-		if network_id != multiplayer.get_unique_id() and not multiplayer.is_peer_connected(network_id):
-			excess_players.append(network_id)
-	for network_id in excess_players:
-		remove_player(network_id)

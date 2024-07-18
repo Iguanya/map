@@ -5,9 +5,9 @@ extends CharacterBody3D
 @export var speed = 5.0
 @export var jump_velocity = 4.5
 
-@onready var camera_mount = $cameramount
-@onready var animation_player = $visuals/mixamo_base/AnimationPlayer
 @onready var synchronizer = $MultiplayerSynchronizer  # Reference the MultiplayerSynchronizer node
+@onready var animation_player = $visuals/skibidi/AnimationPlayer
+@onready var camera_mount = $camera_mount
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -45,13 +45,10 @@ func _physics_process(delta):
 		var direction = (global_transform.basis * input_dir).normalized()
 
 		if direction != Vector3.ZERO:
-			if animation_player.current_animation != "walking":
-				animation_player.play("walking")
+			animation_player.play("mixamo_com")
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
 		else:
-			if animation_player.current_animation != "idle":
-				animation_player.play("idle")
 			velocity.x = move_toward(velocity.x, 0, speed * delta)
 			velocity.z = move_toward(velocity.z, 0, speed * delta)
 

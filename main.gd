@@ -1,7 +1,6 @@
 extends Node
 
 @export var player_scenes: Array[PackedScene]  # An array of PackedScene
-
 var players = {}
 var available_ids = [1, 2, 3, 4, 5, 6, 7, 8]
 var current_scene_index = 0  # To keep track of the current player scene
@@ -26,6 +25,9 @@ func _ready():
 	# Spawn local player if this is the server or client
 	spawn_player(multiplayer.get_unique_id())
 
+	# Remove excess players if any
+	remove_excess_players()
+
 func get_unique_id():
 	if available_ids.size() > 0:
 		var random_index = randi() % available_ids.size()
@@ -35,6 +37,9 @@ func get_unique_id():
 		return -1
 
 func get_next_player_scene():
+	if player_scenes.size() == 0:
+		print("Player scenes not set.")
+		return null
 	var scene = player_scenes[current_scene_index % player_scenes.size()]
 	current_scene_index += 1
 	return scene
@@ -46,10 +51,6 @@ func spawn_player(network_id):
 
 	print("Attempting to spawn player with Network ID: ", network_id)
 
-	if player_scenes.size() == 0:
-		print("Player scenes not set.")
-		return null
-
 	var player_id = get_unique_id()
 	if player_id == -1:
 		print("No available player IDs.")
@@ -58,6 +59,10 @@ func spawn_player(network_id):
 	network_id_to_player_id[network_id] = player_id
 
 	var player_scene = get_next_player_scene()
+	if not player_scene:
+		print("Failed to get player scene.")
+		return null
+
 	var player_instance = player_scene.instantiate()
 	if not player_instance:
 		print("Failed to instantiate player scene.")

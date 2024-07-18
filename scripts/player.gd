@@ -1,104 +1,65 @@
-extends Node
+extends CharacterBody3D
 
-@export var player_scenes: Array[PackedScene]  # An array of PackedScene
+@onready var camera_mount = $cameramount
+@onready var animation_player = $visuals/mixamo_base/AnimationPlayer
+@onready var visuals = $visuals
+@onready var synchronizer = $MultiplayerSynchronizer  # Reference the MultiplayerSynchronizer node
 
-var players = {}
-var available_ids = [1, 2, 3, 4, 5, 6, 7, 8]
-var current_scene_index = 0  # To keep track of the current player scene
-var network_id_to_player_id = {}  # Mapping of network IDs to player IDs
+const SPEED = 2.0
+const JUMP_VELOCITY = 3
 
-signal player_spawned(id, player)
+@export var sens_horizontal = 0.5
+@export var sens_vertical = 0.5
+@export var rotation_speed = 5.0
 
-@onready var multispawner = $spawner
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
-	print("MultiplayerSpawner ready.")
-	set_process(true)
-
-	multiplayer.connect("peer_connected", Callable(self, "_on_peer_connected"))
-	multiplayer.connect("peer_disconnected", Callable(self, "_on_peer_disconnected"))
-
-	# Spawn players for currently connected peers
-	for id in multiplayer.get_peers():
-		if id != multiplayer.get_unique_id():
-			spawn_player(id)
-
-	# Spawn local player if this is the server or client
-	spawn_player(multiplayer.get_unique_id())
-
-	# Remove excess players if any
-	remove_excess_players()
-
-func get_unique_id():
-	if available_ids.size() > 0:
-		var random_index = randi() % available_ids.size()
-		return available_ids[random_index]
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	print("Player ready.")
+	if synchronizer:
+		print("MultiplayerSynchronizer initialized successfully.")
 	else:
-		print("No available IDs.")
-		return -1
+		print("MultiplayerSynchronizer not found.")
 
-func get_next_player_scene():
-	var scene = player_scenes[current_scene_index % player_scenes.size()]
-	current_scene_index += 1
-	return scene
+func _input(event):
+	if has_multiplayer_authority() and event is InputEventMouseMotion:
+		rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
+		camera_mount.rotate_x(deg_to_rad(-event.relative.y * sens_vertical))
 
-func spawn_player(network_id):
-	if network_id in players:
-		print("Player with Network ID already spawned: ", network_id)
-		return null
+func _physics_process(delta):
+	if has_multiplayer_authority():
+		# Apply gravity.
+		if not is_on_floor():
+			velocity.y -= gravity * delta
 
-	print("Attempting to spawn player with Network ID: ", network_id)
+		# Handle jump.
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 
-	if player_scenes.size() == 0:
-		print("Player scenes not set.")
-		return null
+		# Get the input direction and handle the movement/deceleration.
+		var input_dir = Vector3(
+			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+			0,
+			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		)
 
-	var player_id = get_unique_id()
-	if player_id == -1:
-		print("No available player IDs.")
-		return null
+		# Transform the direction to be relative to the character's current orientation
+		var direction = (global_transform.basis * input_dir).normalized()
 
-	network_id_to_player_id[network_id] = player_id
+		if direction != Vector3.ZERO:
+			if animation_player.current_animation != "walking":
+				animation_player.play("walking")
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			if animation_player.current_animation != "idle":
+				animation_player.play("idle")
+			velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+			velocity.z = move_toward(velocity.z, 0, SPEED * delta)
 
-	var player_scene = get_next_player_scene()
-	var player_instance = player_scene.instantiate()
-	if not player_instance:
-		print("Failed to instantiate player scene.")
-		return null
+		# Apply movement and collision handling
+		move_and_slide()
 
-	player_instance.name = str(player_id)
-	add_child(player_instance)
-	players[network_id] = player_instance
-	available_ids.erase(player_id)  # Remove the ID from available IDs
-	print("Player spawned with Network ID: ", network_id, " and Player ID: ", player_id)
-	emit_signal("player_spawned", player_id, player_instance)
-	return player_instance
-
-func remove_player(network_id):
-	print("Attempting to remove player with Network ID: ", network_id)
-	if network_id in players:
-		var player_id = network_id_to_player_id[network_id]
-		players[network_id].queue_free()
-		players.erase(network_id)
-		network_id_to_player_id.erase(network_id)
-		available_ids.append(player_id)  # Add the ID back to available IDs
-		print("Player removed with Network ID: ", network_id, " and Player ID: ", player_id)
-	else:
-		print("Network ID not found in players dictionary.")
-
-func _on_peer_connected(id):
-	if id != multiplayer.get_unique_id():
-		print("Peer connected with Network ID:", id)
-		spawn_player(id)
-
-func _on_peer_disconnected(id):
-	print("Peer disconnected with Network ID:", id)
-	remove_player(id)
-
-func remove_excess_players():
-	var excess_players = []
-	for network_id in players:
-		if network_id != multiplayer.get_unique_id() and not multiplayer.is_peer_connected(network_id):
-			excess_players.append(network_id)
-	for network_id in excess_players:
-		remove_player(network_id)
+func has_multiplayer_authority() -> bool:
+	return multiplayer.is_server() or synchronizer.is_multiplayer_authority()

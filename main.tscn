@@ -1,6 +1,5 @@
-[gd_scene load_steps=209 format=3 uid="uid://vhxbumnswpns"]
+[gd_scene load_steps=208 format=3 uid="uid://vhxbumnswpns"]
 
-[ext_resource type="Script" path="res://scripts/spawner.gd" id="1_0cwda"]
 [ext_resource type="Script" path="res://main.gd" id="1_76n3h"]
 [ext_resource type="PackedScene" uid="uid://b1ubihsbgfdq5" path="res://scripts/player.tscn" id="1_binyw"]
 [ext_resource type="Texture2D" uid="uid://wshmygrvgmnk" path="res://assets/village_assets_0.png" id="1_vm748"]
@@ -2077,8 +2076,6 @@ player_scenes = Array[PackedScene]([ExtResource("1_binyw"), ExtResource("3_nvhog
 [node name="spawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scripts/player.tscn")
 spawn_path = NodePath("..")
-script = ExtResource("1_0cwda")
-player_scene = ExtResource("3_nvhog")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)

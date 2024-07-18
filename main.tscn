@@ -2794,24 +2794,7 @@ grow_vertical = 2
 texture = ExtResource("17_8cdli")
 expand_mode = 1
 
-[node name="Grantcoin" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -96.5
-offset_top = -22.0
-offset_right = 196.5
-offset_bottom = 61.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Grant coins"
-
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("46_d7pwd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0964, -0.909688, -2.12395)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-
-[connection signal="pressed" from="Control/Grantcoin" to="Control" method="_on_grantcoin_pressed"]

@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://ojoftjnxogpx"]
+
+[ext_resource type="Script" path="res://chain/scripts/Blockchain.gd" id="1_imy87"]
+[ext_resource type="Script" path="res://chain/scripts/Treasurer.gd" id="2_eawko"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d6da"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8nl3"]
+bg_color = Color(0.0488316, 0.696247, 0.604112, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 643.0
+
+[node name="Blockchain" type="Node2D" parent="."]
+script = ExtResource("1_imy87")
+
+[node name="Treasurer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 654.0
+script = ExtResource("2_eawko")
+blockchain = NodePath("../Blockchain")
+
+[node name="MintedMoneyLabel" type="Label" parent="Treasurer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 6.0
+offset_right = -2.0
+offset_bottom = 94.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5d6da")
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Treasurer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -464.0
+offset_top = 6.0
+offset_right = -226.0
+offset_bottom = 94.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_w8nl3")
+text = "Minted Money"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Treasurer"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = -168.0
+offset_right = 219.0
+offset_bottom = 245.0
+grow_vertical = 2
+
+[node name="MintButton" type="Button" parent="Treasurer/VBoxContainer"]
+layout_mode = 2
+text = "Mint DBS"
+
+[node name="SaveButton" type="Button" parent="Treasurer/VBoxContainer"]
+layout_mode = 2
+text = "Save Chain"
+
+[node name="LoadButton" type="Button" parent="Treasurer/VBoxContainer"]
+layout_mode = 2
+text = "Load Chain"
+
+[node name="VisualizeButton" type="Button" parent="Treasurer/VBoxContainer"]
+layout_mode = 2
+text = "Visualise"
+
+[node name="Label" type="Label" parent="Treasurer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.5
+offset_top = -179.0
+offset_right = 255.5
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Hash Proceedings"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="proceedings" type="RichTextLabel" parent="Treasurer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -97.0
+offset_right = 245.5
+offset_bottom = 287.0
+grow_horizontal = 2
+grow_vertical = 2

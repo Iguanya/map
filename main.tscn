@@ -2694,21 +2694,8 @@ use_collision = true
 size = Vector3(100, 5, 1)
 
 [node name="ChainCard" parent="map" instance=ExtResource("46_446w7")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3, 0, 0.137596)
-
-[node name="ChainCard5" parent="map" instance=ExtResource("46_446w7")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3, 0, -0.162723)
-mass = 0.44
-
-[node name="ChainCard2" parent="map" instance=ExtResource("46_446w7")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.52831, 0, 0)
-
-[node name="ChainCard3" parent="map" instance=ExtResource("46_446w7")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.54386, 0, 0)
-
-[node name="ChainCard4" parent="map" instance=ExtResource("46_446w7")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.21576, 0, 0.708852)
-prompt_message = "Collect Blockchain cards"
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0.885616)
+prompt_message = "Collect  blockchain cards"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -2718,6 +2705,7 @@ offset_top = 1.0
 offset_right = 1162.0
 offset_bottom = 647.0
 script = ExtResource("16_xsk7h")
+blockchain = NodePath(".")
 
 [node name="PlayerInfoBox" type="Panel" parent="Control"]
 layout_mode = 1

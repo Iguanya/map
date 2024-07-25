@@ -1,15 +1,32 @@
 extends Control
 
-var coin_value = 0
+@export var blockchain: NodePath
 @onready var coins_value = %CoinsValue
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print("Control ready.")
+	print("Blockchain path: ", blockchain)
+	var blockchain_instance = get_node(blockchain) as Blockchain
+	if blockchain_instance == null:
+		print("Blockchain instance not found at path: ", blockchain)
+		return
+	update_coin_value("1")  # Replace "1" with the actual player ID logic
 
+	# Connect to the balance_updated signal
+	get_parent().connect("balance_updated", Callable(self, "_on_balance_updated"))
 
+func update_coin_value(network_id: String):
+	var blockchain_instance = get_node(blockchain) as Blockchain
+	if blockchain_instance == null:
+		print("Blockchain instance not found at path: ", blockchain)
+		return
 
-func _on_grantcoin_pressed():
-	coin_value +=10
-	print(coin_value)
+	var coin_value = blockchain_instance.get_balance_of_address(network_id)
+	print("Coin value fetched: ", coin_value)
 	coins_value.text = str(coin_value)
+	print("Updated coin value for network_id: ", network_id, ": ", coin_value)
+
+func _on_balance_updated(network_id, balance):
+	print("Balance updated for network_id: ", network_id, ": ", balance)
+	if str(network_id) == "1":  # Replace "1" with the actual player ID logic
+		coins_value.text = str(balance)

@@ -1,5 +1,10 @@
 extends Node
 
+var Blockchain = preload("res://chain/scripts/Blockchain.gd")
+var Transaction = preload("res://chain/scripts/Transaction.gd")
+
+@onready var blockchain = Blockchain.new()
+
 @export var player_scenes: Array[PackedScene]
 var players = {}
 var available_ids = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -7,9 +12,12 @@ var current_scene_index = 0
 var network_id_to_player_id = {}
 
 signal player_spawned(id, player)
+signal balance_updated(network_id, balance)
 
 func _ready():
-	print("MultiplayerSpawner ready.")
+	if blockchain.chain.size() == 0:
+		blockchain.chain.append(blockchain.create_genesis_block())
+	print("Blockchain initialized.")
 	multiplayer.connect("peer_connected", Callable(self, "_on_peer_connected"))
 	multiplayer.connect("peer_disconnected", Callable(self, "_on_peer_disconnected"))
 
@@ -17,6 +25,9 @@ func _ready():
 		if id != multiplayer.get_unique_id():
 			spawn_player(id)
 	spawn_player(multiplayer.get_unique_id())
+
+	# Start mining process
+	start_mining()
 
 func get_unique_id():
 	if available_ids.size() > 0:
@@ -38,10 +49,6 @@ func spawn_player(network_id):
 
 	print("Attempting to spawn player with Network ID: ", network_id)
 
-	if player_scenes.size() == 0:
-		print("Player scenes not set.")
-		return null
-
 	var player_id = get_unique_id()
 	if player_id == -1:
 		print("No available player IDs.")
@@ -60,6 +67,17 @@ func spawn_player(network_id):
 	players[network_id] = player_instance
 	available_ids.erase(player_id)
 	print("Player spawned with Network ID: ", network_id, " and Player ID: ", player_id)
+
+	# Check and grant initial balance
+	var player_balance = blockchain.get_balance_of_address(str(network_id))
+	if player_balance == 0:
+		var transaction = Transaction.new("Treasurer", str(network_id), 100000)
+		blockchain.add_transaction(transaction)
+
+	player_balance = blockchain.get_balance_of_address(str(network_id))
+	print("Updated coin value for network_id: ", network_id, ":", player_balance)
+	emit_signal("balance_updated", network_id, player_balance)
+
 	emit_signal("player_spawned", player_id, player_instance)
 	return player_instance
 
@@ -83,3 +101,17 @@ func _on_peer_connected(id):
 func _on_peer_disconnected(id):
 	print("Peer disconnected with Network ID:", id)
 	remove_player(id)
+
+func start_mining():
+	# This function initiates the continuous mining process
+	mine_pending_transactions()
+
+func mine_pending_transactions():
+	var miner_address = "Treasurer"
+	blockchain.mine_pending_transactions(miner_address)
+	# Update balances for all players
+	for network_id in players.keys():
+		var player_balance = blockchain.get_balance_of_address(str(network_id))
+		emit_signal("balance_updated", network_id, player_balance)
+	# Schedule the next mining attempt
+	call_deferred("mine_pending_transactions")

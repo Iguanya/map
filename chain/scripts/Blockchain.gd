@@ -6,14 +6,17 @@ var chain: Array
 
 func _ready():
 	chain = []
-	chain.append(create_genesis_block())
-	print("Genesis block created.")
+	if chain.size() == 0:
+		chain.append(create_genesis_block())
+		print("Genesis block created.")
 
 func create_genesis_block() -> Block:
 	var genesis_transaction = Transaction.new("System", "Genesis", 0)
 	return Block.new(0, [genesis_transaction], "0")
 
 func get_latest_block() -> Block:
+	if chain.size() == 0:
+		return create_genesis_block()
 	return chain[-1]
 
 func add_block(new_block: Block):
@@ -70,3 +73,26 @@ func get_total_dbs() -> int:
 		for transaction in block.transactions:
 			total_dbs += transaction.amount
 	return total_dbs
+
+func get_balance_of_address(address: String) -> int:
+	var balance = 0
+	for block in chain:
+		for transaction in block.transactions:
+			if transaction.recipient == address:
+				balance += transaction.amount
+			if transaction.sender == address:
+				balance -= transaction.amount
+	return balance
+
+func add_transaction(transaction: Transaction):
+	# Add transaction to a list of pending transactions (not shown in this code snippet)
+	# For simplicity, this example directly adds transactions to the chain by mining a new block
+	var new_block = Block.new(chain.size(), [transaction], get_latest_block().block_hash)
+	add_block(new_block)
+
+func mine_pending_transactions(miner_address: String):
+	# Simulate mining process and reward the miner (not shown in this code snippet)
+	# For simplicity, this example directly mines and adds the block to the chain
+	var reward_transaction = Transaction.new("System", miner_address, 50)  # Reward for mining
+	var new_block = Block.new(chain.size(), [reward_transaction], get_latest_block().block_hash)
+	add_block(new_block)

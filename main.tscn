@@ -1,4 +1,4 @@
-[gd_scene load_steps=208 format=3 uid="uid://vhxbumnswpns"]
+[gd_scene load_steps=212 format=3 uid="uid://vhxbumnswpns"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_76n3h"]
 [ext_resource type="PackedScene" uid="uid://b1ubihsbgfdq5" path="res://scripts/player.tscn" id="1_binyw"]
@@ -8,12 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://b6m58djydei3m" path="res://player_2.tscn" id="3_nvhog"]
 [ext_resource type="Texture2D" uid="uid://igm3qakw1jpn" path="res://assets/village_assets_3.png" id="4_lypyl"]
 [ext_resource type="Texture2D" uid="uid://eplnyn2oqaqd" path="res://assets/village_assets_4.png" id="5_2ndeg"]
+[ext_resource type="Script" path="res://interactions/door.gd" id="6_5nh8p"]
 [ext_resource type="Texture2D" uid="uid://bfwtvncbueqw5" path="res://assets/village_assets_5.png" id="6_wqx0y"]
 [ext_resource type="Texture2D" uid="uid://cla8028agtby8" path="res://assets/village_assets_6.png" id="7_ia03y"]
 [ext_resource type="Texture2D" uid="uid://d0wf0sn2jy1fy" path="res://assets/village_assets_7.png" id="8_6iwby"]
 [ext_resource type="Texture2D" uid="uid://tw4kd067xqtc" path="res://assets/village_assets_8.png" id="9_7umjo"]
 [ext_resource type="Texture2D" uid="uid://dq6h0vc8wcppu" path="res://assets/village_assets_9.png" id="10_w38t6"]
 [ext_resource type="Texture2D" uid="uid://b1nj8o2glom2m" path="res://assets/village_assets_10.png" id="11_tj6ol"]
+[ext_resource type="Script" path="res://interactions/interactable.gd" id="12_qib24"]
 [ext_resource type="Texture2D" uid="uid://dfv5mfeku4eo3" path="res://assets/village_assets_11.png" id="12_wfx4o"]
 [ext_resource type="Texture2D" uid="uid://dhhje56afgu06" path="res://assets/village_assets_12.png" id="13_rxmi8"]
 [ext_resource type="Texture2D" uid="uid://c3tsgpq3k48ho" path="res://textures/grids/Dark/texture_02.png" id="15_3fida"]
@@ -47,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://bsvpvl7oygooq" path="res://assets/game_landscape_tiles_23.png" id="39_2ktec"]
 [ext_resource type="Texture2D" uid="uid://du1v2lrbqb80p" path="res://assets/game_landscape_tiles_24.png" id="40_o135h"]
 [ext_resource type="Texture2D" uid="uid://e1crfsn00s64" path="res://assets/game_landscape_tiles_25.png" id="41_tk2b8"]
+[ext_resource type="PackedScene" uid="uid://csiki7yts1awj" path="res://interactions/chain_card.tscn" id="46_446w7"]
 [ext_resource type="PackedScene" uid="uid://c054jha3apd6e" path="res://assets/grass_filed.glb" id="46_d7pwd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbnp8"]
@@ -137,6 +140,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6mi5p")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdfgq"]
+size = Vector3(1, 0.856323, 0.116211)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_a7g47"]
 _surfaces = [{
@@ -2109,10 +2115,17 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_ap0vs")
 
 [node name="doorbleulowp_001_0" type="Node3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house2_2"]
+script = ExtResource("6_5nh8p")
 
 [node name="Object_6" type="MeshInstance3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house2_2/doorbleulowp_001_0"]
 mesh = SubResource("ArrayMesh_3leq2")
 skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house2_2/doorbleulowp_001_0/Object_6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house2_2/doorbleulowp_001_0/Object_6/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66228, 0.330041, 8.47268)
+shape = SubResource("BoxShape3D_jdfgq")
 
 [node name="TOITVERT_001_1" type="Node3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house2_2"]
 
@@ -2128,6 +2141,8 @@ mesh = SubResource("ArrayMesh_v7o4u")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house3_6/Object_10"]
+script = ExtResource("12_qib24")
+prompt_message = "Home Mansion"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house3_6/Object_10/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fqfbf")
@@ -2194,6 +2209,8 @@ mesh = SubResource("ArrayMesh_lja3p")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house5_14/Object_28"]
+script = ExtResource("12_qib24")
+prompt_message = "Ice cream Palace"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house5_14/Object_28/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ms1gp")
@@ -2322,6 +2339,8 @@ mesh = SubResource("ArrayMesh_kr1rt")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house1_32/Object_64"]
+script = ExtResource("12_qib24")
+prompt_message = "Local Inn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="village/Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/house1_32/Object_64/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_g4x7e")
@@ -2674,6 +2693,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
 use_collision = true
 size = Vector3(100, 5, 1)
 
+[node name="ChainCard" parent="map" instance=ExtResource("46_446w7")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0.885616)
+prompt_message = "Collect  blockchain cards"
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -2682,6 +2705,7 @@ offset_top = 1.0
 offset_right = 1162.0
 offset_bottom = 647.0
 script = ExtResource("16_xsk7h")
+blockchain = NodePath(".")
 
 [node name="PlayerInfoBox" type="Panel" parent="Control"]
 layout_mode = 1

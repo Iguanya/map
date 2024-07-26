@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://csiki7yts1awj"]
+
+[ext_resource type="ArrayMesh" uid="uid://dslemwejr3e75" path="res://key_card.res" id="1_e0prw"]
+[ext_resource type="Script" path="res://interactions/chain_card.gd" id="1_l8ur0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bdbt3"]
+size = Vector3(2.05029, 0.132568, 1.23145)
+
+[node name="ChainCard" type="RigidBody3D"]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
+script = ExtResource("1_l8ur0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_e0prw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00469048, 0.00999318, -0.00262981)
+shape = SubResource("BoxShape3D_bdbt3")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]

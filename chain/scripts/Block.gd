@@ -6,15 +6,17 @@ var index: int
 var timestamp: int
 var transactions: Array
 var previous_hash: String
-var block_hash: String
-var nonce: int = 0
+var block_hash: String  # Renamed to avoid shadowing built-in function
+var nonce: int = 0  # Declare the nonce variable
+var proceedings: RichTextLabel
 
-func _init(_index, _transactions, _previous_hash):
+func _init(_index, _transactions, _previous_hash, _proceedings):
 	index = _index
-	timestamp = Utils.get_unix_time()
+	timestamp = Utils.get_unix_time()  # Use Utils.get_unix_time() for Unix timestamp
 	transactions = _transactions
 	previous_hash = _previous_hash
-	block_hash = calculate_hash()
+	block_hash = calculate_hash()  # Updated to use the new variable name
+	proceedings = _proceedings
 
 func calculate_hash() -> String:
 	var data = str(index) + str(timestamp) + str(transactions) + previous_hash + str(nonce)
@@ -27,33 +29,18 @@ func hash_string(data: String) -> String:
 	return sha256.finish().hex_encode()
 
 func mine_block(difficulty: int):
+	var start_time = Utils.get_unix_time()
 	var target = "0".repeat(difficulty)
-	while block_hash.substr(0, difficulty) != target:
+	var hash_count = 0
+	if proceedings:
+		proceedings.append_text("Mining started. Target: Ends with " + target + "\n")
+	while not block_hash.ends_with(target):
 		nonce += 1
 		block_hash = calculate_hash()
-
-func to_dict() -> Dictionary:
-	var transactions_dict = []
-	for transaction in transactions:
-		transactions_dict.append(transaction.to_dict())
-	return {
-		"index": index,
-		"timestamp": timestamp,
-		"transactions": transactions_dict,
-		"previous_hash": previous_hash,
-		"block_hash": block_hash,
-		"nonce": nonce
-	}
-
-func from_dict(dict: Dictionary):
-	index = dict["index"]
-	timestamp = dict["timestamp"]
-	transactions = []
-	for transaction_dict in dict["transactions"]:
-		var transaction = Transaction.new()
-		transaction.from_dict(transaction_dict)
-		transactions.append(transaction)
-	previous_hash = dict["previous_hash"]
-	block_hash = dict["block_hash"]
-	nonce = dict["nonce"]
-	return self
+		hash_count += 1
+		if hash_count % 1000 == 0 and proceedings:  # Log every 1000 hashes
+			proceedings.append_text("Hashes computed: " + str(hash_count) + " Current hash: " + block_hash + "\n")
+	var end_time = Utils.get_unix_time()
+	if proceedings:
+		proceedings.append_text("Block mined in " + str(end_time - start_time) + " seconds\n")
+		proceedings.append_text("Total hashes computed: " + str(hash_count) + "\n")

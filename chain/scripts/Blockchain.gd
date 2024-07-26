@@ -3,6 +3,7 @@ extends Node
 class_name Blockchain
 
 var chain: Array
+var difficulty: int = 4  # Simplified for fast minting
 
 func _ready():
 	chain = []
@@ -12,7 +13,7 @@ func _ready():
 
 func create_genesis_block() -> Block:
 	var genesis_transaction = Transaction.new("System", "Genesis", 0)
-	return Block.new(0, [genesis_transaction], "0")
+	return Block.new(0, [genesis_transaction], "0", null)  # Pass null for proceedings
 
 func get_latest_block() -> Block:
 	if chain.size() == 0:
@@ -21,7 +22,7 @@ func get_latest_block() -> Block:
 
 func add_block(new_block: Block):
 	new_block.previous_hash = get_latest_block().block_hash
-	new_block.block_hash = new_block.calculate_hash()
+	new_block.mine_block(difficulty)
 	chain.append(new_block)
 	print("Block added to the blockchain. Current chain length: ", chain.size())
 
@@ -40,14 +41,16 @@ func is_chain_valid() -> bool:
 
 func save_blockchain(file_path: String):
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
-	var chain_data = []
-	for block in chain:
-		chain_data.append(block.to_dict())
-	file.store_string(JSON.stringify(chain_data, "\t"))
-	file.close()
+	if file:
+		file.store_var(chain)
+		file.close()
+		print("Blockchain saved to ", file_path)
+	else:
+		print("Failed to open file for writing: ", file_path)
 
 func load_blockchain(file_path: String):
 	var file = FileAccess.open(file_path, FileAccess.READ)
+<<<<<<< HEAD
 	if not file:
 		print("File not found: ", file_path)
 		return
@@ -96,3 +99,11 @@ func mine_pending_transactions(miner_address: String):
 	var reward_transaction = Transaction.new("System", miner_address, 50)  # Reward for mining
 	var new_block = Block.new(chain.size(), [reward_transaction], get_latest_block().block_hash)
 	add_block(new_block)
+=======
+	if file:
+		chain = file.get_var()
+		file.close()
+		print("Blockchain loaded from ", file_path)
+	else:
+		print("No blockchain file found at ", file_path)
+>>>>>>> parent of 6959674 (More refined Updates)

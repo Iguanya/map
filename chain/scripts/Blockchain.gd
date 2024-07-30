@@ -3,7 +3,7 @@ extends Node
 class_name Blockchain
 
 var chain: Array
-var difficulty: int = 4  # Simplified for fast minting
+var difficulty: int = 2  # Simplified for fast minting
 
 func _ready():
 	chain = []
@@ -12,8 +12,9 @@ func _ready():
 		print("Genesis block created.")
 
 func create_genesis_block() -> Block:
-	var genesis_transaction = Transaction.new("System", "Genesis", 0)
-	return Block.new(0, [genesis_transaction], "0", null)  # Pass null for proceedings
+	var genesis_block = Block.new(0, [], "0", "")
+	genesis_block.block_hash = genesis_block.calculate_hash()
+	return genesis_block
 
 func get_latest_block() -> Block:
 	if chain.size() == 0:
@@ -50,7 +51,6 @@ func save_blockchain(file_path: String):
 
 func load_blockchain(file_path: String):
 	var file = FileAccess.open(file_path, FileAccess.READ)
-<<<<<<< HEAD
 	if not file:
 		print("File not found: ", file_path)
 		return
@@ -64,7 +64,7 @@ func load_blockchain(file_path: String):
 
 	chain = []
 	for block_dict in chain_data:
-		var block = Block.new(block_dict["index"], block_dict["transactions"], block_dict["previous_hash"])
+		var block = Block.new(block_dict["index"], block_dict["transactions"], block_dict["previous_hash"], "")
 		block.from_dict(block_dict)
 		chain.append(block)
 	file.close()
@@ -90,20 +90,12 @@ func get_balance_of_address(address: String) -> int:
 func add_transaction(transaction: Transaction):
 	# Add transaction to a list of pending transactions (not shown in this code snippet)
 	# For simplicity, this example directly adds transactions to the chain by mining a new block
-	var new_block = Block.new(chain.size(), [transaction], get_latest_block().block_hash)
+	var new_block = Block.new(chain.size(), [transaction], get_latest_block().block_hash, "")
 	add_block(new_block)
 
 func mine_pending_transactions(miner_address: String):
 	# Simulate mining process and reward the miner (not shown in this code snippet)
 	# For simplicity, this example directly mines and adds the block to the chain
 	var reward_transaction = Transaction.new("System", miner_address, 50)  # Reward for mining
-	var new_block = Block.new(chain.size(), [reward_transaction], get_latest_block().block_hash)
+	var new_block = Block.new(chain.size(), [reward_transaction], get_latest_block().block_hash, "")
 	add_block(new_block)
-=======
-	if file:
-		chain = file.get_var()
-		file.close()
-		print("Blockchain loaded from ", file_path)
-	else:
-		print("No blockchain file found at ", file_path)
->>>>>>> parent of 6959674 (More refined Updates)

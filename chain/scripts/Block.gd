@@ -16,7 +16,6 @@ func _init(_index, _transactions, _previous_hash, _proceedings):
 	transactions = _transactions
 	previous_hash = _previous_hash
 	block_hash = calculate_hash()  # Updated to use the new variable name
-	proceedings = _proceedings
 
 func calculate_hash() -> String:
 	var data = str(index) + str(timestamp) + str(transactions) + previous_hash + str(nonce)

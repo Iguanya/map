@@ -10,7 +10,7 @@ extends Control
 
 var total_minted_money: int = 0
 var blockchain_instance: Blockchain = null
-var game_treasury: int = 1125000  # Total DBS 1,125,000
+var game_treasury: int = 1004  # Total DBS 1,125,000
 var minting: bool = false
 
 func _ready():

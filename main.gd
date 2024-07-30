@@ -27,7 +27,7 @@ func _ready():
 	spawn_player(multiplayer.get_unique_id())
 
 	# Start mining process
-	start_mining()
+#	start_mining()
 
 func get_unique_id():
 	if available_ids.size() > 0:
@@ -38,6 +38,9 @@ func get_unique_id():
 		return -1
 
 func get_next_player_scene():
+	if player_scenes.size() == 0:
+		print("Error: No player scenes available.")
+		return null
 	var scene = player_scenes[current_scene_index % player_scenes.size()]
 	current_scene_index += 1
 	return scene
@@ -57,6 +60,10 @@ func spawn_player(network_id):
 	network_id_to_player_id[network_id] = player_id
 
 	var player_scene = get_next_player_scene()
+	if player_scene == null:
+		print("Failed to get player scene.")
+		return null
+	
 	var player_instance = player_scene.instantiate()
 	if not player_instance:
 		print("Failed to instantiate player scene.")
@@ -102,16 +109,16 @@ func _on_peer_disconnected(id):
 	print("Peer disconnected with Network ID:", id)
 	remove_player(id)
 
-func start_mining():
+#func start_mining():
 	# This function initiates the continuous mining process
-	mine_pending_transactions()
+#	mine_pending_transactions()
 
-func mine_pending_transactions():
-	var miner_address = "Treasurer"
-	blockchain.mine_pending_transactions(miner_address)
-	# Update balances for all players
-	for network_id in players.keys():
-		var player_balance = blockchain.get_balance_of_address(str(network_id))
-		emit_signal("balance_updated", network_id, player_balance)
-	# Schedule the next mining attempt
-	call_deferred("mine_pending_transactions")
+#func mine_pending_transactions():
+#	var miner_address = "Treasurer"
+#3	blockchain.mine_pending_transactions(miner_address)
+#	# Update balances for all players
+#	for network_id in players.keys():
+#		var player_balance = blockchain.get_balance_of_address(str(network_id))
+#		emit_signal("balance_updated", network_id, player_balance)
+#	# Schedule the next mining attempt
+#	call_deferred("mine_pending_transactions")

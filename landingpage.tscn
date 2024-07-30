@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ckpnvp2n4i5ai"]
 
-[ext_resource type="Texture2D" uid="uid://bqgp52sxkgjbq" path="res://assets/0_2.jpeg" id="1_62iu4"]
 [ext_resource type="Script" path="res://scripts/landing_page.gd" id="1_m4bps"]
+[ext_resource type="Texture2D" uid="uid://cydtgub1xaul0" path="res://assets/gamebackground.jpg" id="2_0is4k"]
 [ext_resource type="FontFile" uid="uid://b88st5vkmv41n" path="res://assets/theleagueof-orbitron-13e6a52/Orbitron Black.otf" id="2_43lnf"]
 [ext_resource type="Texture2D" uid="uid://cbnb1ntvrk7gm" path="res://assets/baobab.png" id="2_3465n"]
 [ext_resource type="FontFile" uid="uid://edjhappo5ati" path="res://assets/OFT/Exo2.0-Light.otf" id="4_nk1fd"]
@@ -33,7 +33,7 @@ offset_right = 961.0
 offset_bottom = 508.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_62iu4")
+texture = ExtResource("2_0is4k")
 
 [node name="title" type="RichTextLabel" parent="firstpage"]
 layout_mode = 1
@@ -61,9 +61,9 @@ texture = ExtResource("2_3465n")
 [node name="playbuttton" type="Button" parent="firstpage"]
 layout_mode = 0
 offset_left = 1124.0
-offset_top = 662.0
+offset_top = 664.0
 offset_right = 1336.0
-offset_bottom = 731.0
+offset_bottom = 733.0
 theme_override_colors/font_color = Color(0, 0.956863, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "PLAY NOW"

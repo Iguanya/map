@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=3 uid="uid://fq1rovptqjs2"]
+
+[ext_resource type="Script" path="res://SettingPriorities.gd" id="1_36k1j"]
+[ext_resource type="Script" path="res://PrioritiesControl.gd" id="1_asinb"]
+
+[sub_resource type="Theme" id="Theme_stg1w"]
+
+[node name="SettingPriorities" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_36k1j")
+
+[node name="PrioritiesControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 429.0
+theme = SubResource("Theme_stg1w")
+script = ExtResource("1_asinb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PrioritiesControl"]
+layout_mode = 0
+offset_left = 84.0
+offset_right = 373.0
+offset_bottom = 440.0
+
+[node name="PrioritiesTitle" type="Label" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+text = "SET PRIORITIES"
+
+[node name="Priorities" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="PriorityA" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities"]
+layout_mode = 2
+text = "Rent for Home     3000DBS"
+
+[node name="Priorities2" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities2"]
+layout_mode = 2
+text = "Rent for Business    5000DBS"
+
+[node name="Priorities3" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities3"]
+layout_mode = 2
+text = "Phone Credit   600DBS
+"
+
+[node name="Priorities4" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities4"]
+layout_mode = 2
+text = "Electricity   1000DBS"
+
+[node name="Priorities5" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities5"]
+layout_mode = 2
+text = "Medical Check    4500DBS"
+
+[node name="Priorities6" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities6"]
+layout_mode = 2
+text = "TV Decoder   500DBS"
+
+[node name="Priorities7" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities7"]
+layout_mode = 2
+text = "Clean Water   800DBS
+"
+
+[node name="Priorities8" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities8"]
+layout_mode = 2
+text = "Fares/Travels   2000DBS
+"
+
+[node name="Priorities9" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities9"]
+layout_mode = 2
+text = "Maintenance   2000DBS
+"
+
+[node name="Priorities10" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities10"]
+layout_mode = 2
+text = "Fresh Fruits $ Vegetables  800DBS"
+
+[node name="Priorities11" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities11"]
+layout_mode = 2
+text = "Cooking Gas   800DBS"
+
+[node name="Priorities12" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/Priorities12"]
+layout_mode = 2
+text = "Fresh Meat   1000DBS"
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+text = "Harambee   1000DBS"
+
+[node name="HBoxContainer14" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/HBoxContainer14"]
+layout_mode = 2
+text = "Parents & Family   2000DBS"
+
+[node name="HBoxContainer15" type="HBoxContainer" parent="PrioritiesControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PrioritiesControl/VBoxContainer/HBoxContainer15"]
+layout_mode = 2
+text = "Faith Contribution   500DBS"

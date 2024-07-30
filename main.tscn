@@ -1,4 +1,4 @@
-[gd_scene load_steps=211 format=3 uid="uid://vhxbumnswpns"]
+[gd_scene load_steps=213 format=3 uid="uid://vhxbumnswpns"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_76n3h"]
 [ext_resource type="Texture2D" uid="uid://wshmygrvgmnk" path="res://assets/village_assets_0.png" id="1_vm748"]
@@ -50,6 +50,8 @@
 [ext_resource type="Texture2D" uid="uid://e1crfsn00s64" path="res://assets/game_landscape_tiles_25.png" id="41_tk2b8"]
 [ext_resource type="PackedScene" uid="uid://csiki7yts1awj" path="res://interactions/chain_card.tscn" id="46_446w7"]
 [ext_resource type="PackedScene" uid="uid://c054jha3apd6e" path="res://assets/grass_filed.glb" id="46_d7pwd"]
+[ext_resource type="PackedScene" uid="uid://sint61wh4040" path="res://maishahutokea/MaishaHutokea.tscn" id="51_eya6n"]
+[ext_resource type="Script" path="res://maishahutokea/cardManager.gd" id="52_h84x6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbnp8"]
 sky_horizon_color = Color(0.65789, 0.650751, 0.655116, 1)
@@ -2704,7 +2706,7 @@ offset_top = 1.0
 offset_right = 1162.0
 offset_bottom = 647.0
 script = ExtResource("16_xsk7h")
-blockchain = NodePath(".")
+blockchain = NodePath("..")
 
 [node name="PlayerInfoBox" type="Panel" parent="Control"]
 layout_mode = 1
@@ -2821,3 +2823,8 @@ expand_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0964, -0.909688, -2.12395)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+
+[node name="MaishaHutokea" parent="." instance=ExtResource("51_eya6n")]
+
+[node name="CardManager" type="Node" parent="."]
+script = ExtResource("52_h84x6")

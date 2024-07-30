@@ -4,6 +4,7 @@ class_name Blockchain
 
 var chain: Array
 var difficulty: int = 2  # Simplified for fast minting
+var total_dbs: int = 10000  # Initial DBS amount, adjust if needed
 
 func _ready():
 	chain = []
@@ -71,11 +72,12 @@ func load_blockchain(file_path: String):
 	print("Blockchain loaded successfully.")
 
 func get_total_dbs() -> int:
-	var total_dbs = 0
+	var accumulated_dbs = 0  # Renamed to avoid conflict
 	for block in chain:
 		for transaction in block.transactions:
-			total_dbs += transaction.amount
-	return total_dbs
+			accumulated_dbs += transaction.amount
+	return accumulated_dbs
+
 
 func get_balance_of_address(address: String) -> int:
 	var balance = 0
@@ -88,14 +90,18 @@ func get_balance_of_address(address: String) -> int:
 	return balance
 
 func add_transaction(transaction: Transaction):
-	# Add transaction to a list of pending transactions (not shown in this code snippet)
-	# For simplicity, this example directly adds transactions to the chain by mining a new block
+	# Check if the sender has enough balance
+	var sender_balance = get_balance_of_address(transaction.sender)
+	if sender_balance < transaction.amount:
+		print("Insufficient balance for transaction.")
+		return
+	
+	# Add transaction to the blockchain
 	var new_block = Block.new(chain.size(), [transaction], get_latest_block().block_hash, "")
 	add_block(new_block)
 
 func mine_pending_transactions(miner_address: String):
-	# Simulate mining process and reward the miner (not shown in this code snippet)
-	# For simplicity, this example directly mines and adds the block to the chain
+	# Simulate mining process and reward the miner
 	var reward_transaction = Transaction.new("System", miner_address, 50)  # Reward for mining
 	var new_block = Block.new(chain.size(), [reward_transaction], get_latest_block().block_hash, "")
 	add_block(new_block)

@@ -37,7 +37,7 @@ func _on_mint_button_pressed():
 
 func _mint_coins() -> void:
 	while total_minted_money < game_treasury:
-		var transaction = Transaction.new("Treasurer", "Treasury", 1)
+		var transaction = Transaction.new("System", "Treasurer", 1)
 		var new_block = Block.new(blockchain_instance.chain.size(), [transaction], blockchain_instance.get_latest_block().block_hash, proceedings)
 		blockchain_instance.add_block(new_block)
 		total_minted_money += 1

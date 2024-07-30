@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"description": "Your business is doing well and you just made a deal that gives you 20,000 DBS of extra profit.",
+		"type": "profit",
+		"impact": 20000
+	},
+	{
+		"id": 2,
+		"description": "A surge in the power grid hits your house and your fridge. Replace it for 10,000 DBS.",
+		"type": "expense",
+		"impact": -10000
+	},
+	{
+		"id": 3,
+		"description": "Your oldest child gets married. Pay 10,000 DBS and 5,000 DBS from each other player.",
+		"type": "expense",
+		"impact": -10000,
+		"community_impact": 5000
+	},
+	{
+		"id": 4,
+		"description": "You had a severe accident at work and have medical expenses and loss of income. Pay 50,000 DBS, or 20,000 DBS if you own a safety ladder.",
+		"type": "expense",
+		"impact": -50000,
+		"reduced_impact": -20000,
+		"condition": "safety_ladder"
+	},
+	{
+		"id": 5,
+		"description": "A family member had an accident with a motorbike and there are medical expenses. Pay 10,000 DBS, or 5,000 DBS if you bought them a safety helmet.",
+		"type": "expense",
+		"impact": -10000,
+		"reduced_impact": -5000,
+		"condition": "safety_helmet"
+	},
+	{
+		"id": 6,
+		"description": "Your phone is broken beyond repair and needs to be replaced. Pay 5,000 DBS.",
+		"type": "expense",
+		"impact": -5000
+	},
+	{
+		"id": 7,
+		"description": "A business idea did not work out as planned and creates a loss. Pay 10,000 DBS.",
+		"type": "expense",
+		"impact": -10000
+	},
+	{
+		"id": 8,
+		"description": "You stumbled and fell on your way home and have some open wounds. There are medical expenses of 2,000 DBS, or no cost if you use your First-Aid-Kit.",
+		"type": "expense",
+		"impact": -2000,
+		"reduced_impact": 0,
+		"condition": "first_aid_kit"
+	},
+	{
+		"id": 9,
+		"description": "A tool important for your business has broken down. Without it, you cannot provide services or products to your customers. Pay 1,500 DBS for minor repairs, or 15,000 DBS for major repairs.",
+		"type": "expense",
+		"impact": -1500,
+		"major_impact": -15000
+	},
+	{
+		"id": 10,
+		"description": "A family member is sick and you have medical expenses. Pay 1,000 DBS, or no cost if you use your First-Aid-Kit.",
+		"type": "expense",
+		"impact": -1000,
+		"reduced_impact": 0,
+		"condition": "first_aid_kit"
+	}
+]

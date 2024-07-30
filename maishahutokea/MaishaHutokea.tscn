@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://sint61wh4040"]
+
+[ext_resource type="Script" path="res://maishahutokea/MaishaHutokea.gd" id="1_ewdne"]
+[ext_resource type="FontFile" uid="uid://b0m40l4jj8mxs" path="res://RobotoCondensed-Italic-VariableFont_wght.ttf" id="1_m3a0x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cj3g"]
+bg_color = Color(0.462291, 0.462291, 0.46229, 0.454902)
+
+[node name="MaishaHutokea" type="Control"]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 336.0
+grow_vertical = 2
+script = ExtResource("1_ewdne")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = 151.0
+offset_right = 202.0
+offset_bottom = 314.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cj3g")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+offset_right = 118.0
+offset_bottom = 22.0
+size_flags_vertical = 6
+focus_mode = 2
+theme_override_colors/default_color = Color(0.860369, 0.860369, 0.860369, 1)
+theme_override_fonts/normal_font = ExtResource("1_m3a0x")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "Null"
+fit_content = true
+selection_enabled = true

@@ -10,18 +10,19 @@ position = Vector2(1, 0)
 [node name="PrioritySettingScreen" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 575.0
-offset_bottom = 647.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 644.0
 theme = SubResource("Theme_stg1w")
 script = ExtResource("1_skxi6")
 
 [node name="PriorityContainer" type="VBoxContainer" parent="PrioritySettingScreen"]
 layout_mode = 0
-offset_left = 84.0
-offset_right = 373.0
-offset_bottom = 440.0
+offset_left = 892.0
+offset_top = 359.0
+offset_right = 1151.0
+offset_bottom = 907.0
 
 [node name="PrioritiesTitle" type="Label" parent="PrioritySettingScreen/PriorityContainer"]
 layout_mode = 2

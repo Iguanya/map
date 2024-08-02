@@ -2,6 +2,7 @@ extends Node
 
 var BlockchainClass = preload("res://chain/scripts/Blockchain.gd")
 var TransactionClass = preload("res://chain/scripts/Transaction.gd")
+var PrioritySettingScreen = preload("res://SettingPriorities.tscn")
 
 @onready var blockchain_instance = BlockchainClass.new()
 @export var player_scenes: Array[PackedScene]
@@ -12,6 +13,7 @@ var network_id_to_player_id = {}
 
 signal player_spawned(id, player)
 signal balance_updated(network_id, balance)
+signal priority_selected(player_id, priorities)
 
 func _ready():
 	if blockchain_instance.chain.size() == 0:
@@ -24,6 +26,8 @@ func _ready():
 		if id != multiplayer.get_unique_id():
 			spawn_player(id)
 	spawn_player(multiplayer.get_unique_id())
+
+	start_random_priority_timer()
 
 func get_unique_id():
 	if available_ids.size() > 0:
@@ -153,3 +157,30 @@ func mine_pending_transactions():
 	for network_id in players.keys():
 		var player_balance = blockchain_instance.get_balance_of_address(str(network_id))
 		emit_signal("balance_updated", network_id, player_balance)
+
+# Random priority setting trigger
+func start_random_priority_timer():
+	var timer = Timer.new()
+	timer.wait_time = randf_range(30.0, 60.0) # Random time between 30 to 60 seconds
+	timer.one_shot = true
+	timer.connect("timeout", Callable(self, "_on_random_priority_timer_timeout"))
+	add_child(timer)
+	timer.start()
+
+# Function called when the random priority timer times out
+func _on_random_priority_timer_timeout():
+	show_priority_screen()
+
+# Function to show the priority setting screen
+func show_priority_screen():
+	var priority_screen_instance = PrioritySettingScreen.instantiate()
+	add_child(priority_screen_instance)
+	priority_screen_instance.connect("priority_selected", Callable(self, "_on_priority_selected"))
+
+# Function called when priorities are selected
+func _on_priority_selected(player_id, priorities):
+	print("Player ", player_id, " selected priorities: ", priorities)
+	# You can add further logic here to handle the selected priorities
+
+
+

@@ -1,22 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfg6qw4bxcvml"]
+[gd_scene load_steps=3 format=3 uid="uid://dfg6qw4bxcvml"]
 
 [ext_resource type="Script" path="res://scripts/multi_player.gd" id="1_xl8b7"]
+[ext_resource type="Texture2D" uid="uid://cn4g6sml7twej" path="res://IMG_20221223_165930.jpg" id="2_5fkt6"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_xl8b7")
 
-[node name="Host" type="Button" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -143.0
-offset_top = 75.0
-offset_right = -12.0
-offset_bottom = 137.0
-grow_horizontal = 2
-scale = Vector2(2.90757, 3.06552)
-size_flags_horizontal = 4
-text = "Host"
+[node name="Img20221223165930" type="Sprite2D" parent="."]
+position = Vector2(588, 346)
+scale = Vector2(0.345313, 0.322756)
+texture = ExtResource("2_5fkt6")
 
 [node name="Join" type="Button" parent="."]
 anchors_preset = 8
@@ -33,5 +26,18 @@ grow_vertical = 2
 scale = Vector2(2.72542, 1.68841)
 text = "Join"
 
-[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[node name="Host" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 75.0
+offset_right = -12.0
+offset_bottom = 137.0
+grow_horizontal = 2
+scale = Vector2(2.90757, 3.06552)
+size_flags_horizontal = 4
+text = "Host"
+
 [connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]

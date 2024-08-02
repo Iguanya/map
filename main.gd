@@ -2,7 +2,7 @@ extends Node
 
 var BlockchainClass = preload("res://chain/scripts/Blockchain.gd")
 var TransactionClass = preload("res://chain/scripts/Transaction.gd")
-var PrioritySettingScreen = preload("res://SettingPriorities.tscn")
+var PrioritySettingScreen = preload("res://setpriorities/SettingPriorities.tscn")
 
 @onready var blockchain_instance = BlockchainClass.new()
 @export var player_scenes: Array[PackedScene]

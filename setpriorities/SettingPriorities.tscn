@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://fq1rovptqjs2"]
 
-[ext_resource type="Script" path="res://PrioritySettingScreen.gd" id="1_skxi6"]
+[ext_resource type="Script" path="res://setpriorities/PrioritySettingScreen.gd" id="1_skxi6"]
 
 [sub_resource type="Theme" id="Theme_stg1w"]
 
